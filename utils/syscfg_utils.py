@@ -42,6 +42,7 @@ def generate_sp_tags_one2all(nch:int) -> List[str]:
     return sp
 
 def genetare_sp_tags_grp_all2all(ntg:int, nch:int, group_size:int) -> List[str]:
+    #TODO: implement this
     sp = ['# Grouped connectivitiy not supported yet.\n']
     return sp
 
