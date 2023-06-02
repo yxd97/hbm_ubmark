@@ -10,7 +10,7 @@ def generate_baisc_config(
         f'CXX := {cpp_compiler}\n',
         f'VPP := {vitis_compiler}\n',
         'TARGET := hw\n',
-        f'BOARD = $({board_xsa_name})\n',
+        f'BOARD = {board_xsa_name}\n',
         f'BOARD_REPO_PATH = {board_repo_path}\n',
         'PLATFORM := $(BOARD_REPO_PATH)/$(BOARD)/$(BOARD).xpfm\n',
         'HOST_ARCH := x86\n',
@@ -26,8 +26,8 @@ def generate_include_oclxcl(include_dir:str) -> List[str]:
 
 def generate_dir_config(build_dir:str, output_dir:str) -> List[str]:
     return [
-        f'BUILD_DIR := {build_dir}\n',
-        f'OUTPUT_DIR := {output_dir}\n',
+        f'BUILD_DIR := ../{build_dir}\n',
+        f'OUTPUT_DIR := ../{output_dir}\n',
         'LOG_DIR := $(BUILD_DIR)/logs\n',
         'COMPILE_DIR := $(BUILD_DIR)/compile_$(TARGET)\n',
         'LINK_DIR := $(BUILD_DIR)/link_$(TARGET)\n',
@@ -37,11 +37,11 @@ def generate_dir_config(build_dir:str, output_dir:str) -> List[str]:
 def generate_kernel_config(kernel_name:str, target_frequency_mhz:int=300) -> List[str]:
     return [
         f'KRNL_NAME := {kernel_name}\n',
-        'KRNL_SRC := ../$(KRNL_NAME)/$(KRNL_NAME).cpp\n',
+        'KRNL_SRC := ../../$(KRNL_NAME)/$(KRNL_NAME).cpp\n',
         'KRNL_OBJ := $(COMPILE_DIR)/$(KRNL_NAME).xo\n',
         'KRNL_COMPILE_OPTS := -t $(TARGET) --platform $(PLATFORM) --save-temps --temp_dir $(COMPILE_DIR) --report_dir $(OUTPUT_DIR) --log_dir $(LOG_DIR)\n',
         f'KRNL_COMPILE_OPTS += --kernel_frequency {target_frequency_mhz}\n',
-        'KRNL_COMPILE_OPTS += -I../$(KRNL_NAME)\n',
+        'KRNL_COMPILE_OPTS += -I../../$(KRNL_NAME)\n',
         'SYS_LINK_OPTS := -t $(TARGET) --platform $(PLATFORM) --save-temps --temp_dir $(LINK_DIR) --report_dir $(OUTPUT_DIR) --log_dir $(LOG_DIR)\n',
         f'SYS_LINK_OPTS += --kernel_frequency {target_frequency_mhz}\n',
         'SYS_LINK_OPTS += --config system.cfg\n',
@@ -75,14 +75,15 @@ def generate_emulation_config(
 
 def generate_build_targets(test_case_name:str) -> List[str]:
     return [
+        f'FPGA_BINARY = $(OUTPUT_DIR)/{test_case_name}.$(TARGET).xclbin\n',
+        '\n',
         '.PHONY: xclbin host emconfig\n',
         'xclbin: $(FPGA_BINARY)\n',
         'host: $(HOST_EXE)\n',
         'emconfig: $(EMCONFIG_FILE)\n',
         '\n',
-        f'FPGA_BINARY = $(OUTPUT_DIR)/{test_case_name}.$(TARGET).xclbin\n',
         '$(KRNL_OBJ): $(KRNL_SRC)\n',
-        '\t$(VPP) $(KRNL_COMPILE_OPTS) -c -k $(KRNL_NAME) -o $(KRNL_ONJ) $(KRNL_SRC)\n',
+        '\t$(VPP) $(KRNL_COMPILE_OPTS) -c -k $(KRNL_NAME) -o $(KRNL_OBJ) $(KRNL_SRC)\n',
         '\n',
         '$(FPGA_BINARY): $(KRNL_OBJ)\n',
         '\t$(VPP) $(SYS_LINK_OPTS) -l -o $(FPGA_BINARY) $(KRNL_OBJ)\n',

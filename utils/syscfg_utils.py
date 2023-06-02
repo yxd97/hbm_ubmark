@@ -1,9 +1,11 @@
 from typing import List,Tuple
 
 def generate_nk_tags(ntg:int) -> List[str]:
-    nk = f'nk=hbm_tg:{ntg}'
+    nk = f'nk=hbm_tg:{ntg}:'
     for i in range(ntg):
-        nk += f'.tg{i}'
+        nk += f'tg{i}'
+        if i != ntg - 1:
+            nk += '.'
     nk += '\n'
     return [nk]
 

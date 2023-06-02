@@ -14,6 +14,8 @@ CONNECTIVITIES = [
     'one2one'
 ]
 
+ABS_ROOT = os.path.abspath(os.path.dirname(__file__))
+
 def pinfo(*args, **kwargs):
     print("[INFO] ", *args, **kwargs, file=sys.stdout)
 
@@ -22,6 +24,10 @@ def pwarning(*args, **kwargs):
 
 def perror(*args, **kwargs):
     print("[ERROR] ", *args, **kwargs, file=sys.stderr)
+
+def echo_chdir(dir:str):
+    pinfo(f'changing to directory {dir}')
+    os.chdir(dir)
 
 class TestCase:
     def __init__(self, connectivity:str, ntg:int, nch:int):
@@ -32,10 +38,12 @@ class TestCase:
         self.ntg = ntg
         self.nch = nch
         self.name = f'{connectivity}_{ntg}t{nch}c'
-        self.include_dir = 'include'
-        self.project_root = os.path.join('.', self.name)
-        self.build_dir = os.path.join(self.project_root, 'build')
-        self.output_dir = os.path.join(self.project_root, 'output')
+        self.project_root = self.name
+        self.build_dir_name = 'build'
+        self.output_dir_name = 'output'
+        self.build_dir = os.path.join(self.project_root, self.build_dir_name)
+        self.output_dir = os.path.join(self.project_root, self.output_dir_name)
+        self.include_dir = os.path.join('..', '..', 'include') # relative to build dir
         self.floorplan = None
 
     def apply_floorplan(self, ntg_slrs:Tuple[int, int, int]):
@@ -59,7 +67,7 @@ class TestCase:
             f.write(f"# Testcase: {self.name}\n")
             f.writelines(makefile_utils.generate_baisc_config(board_repo_path, board_xsa))
             f.writelines(makefile_utils.generate_include_oclxcl(self.include_dir))
-            f.writelines(makefile_utils.generate_dir_config(self.build_dir, self.output_dir))
+            f.writelines(makefile_utils.generate_dir_config(self.build_dir_name, self.output_dir_name))
             f.writelines(makefile_utils.generate_kernel_config('hbm_tg'))
             f.writelines(makefile_utils.generate_host_config(self.include_dir))
             f.writelines(makefile_utils.generate_emulation_config())
@@ -81,26 +89,30 @@ class TestCase:
 
     def build_test(self, no_host:bool=False):
         pinfo(f'Building test {self.name} ')
-        os.chdir(self.build_dir)
+        echo_chdir(self.build_dir)
         if not no_host:
             os.system('make xclbin host')
         else:
             os.system('make xclbin')
+        echo_chdir(ABS_ROOT)
 
     def run_test(self):
         pinfo(f'Running test {self.name} ')
-        os.chdir(self.build_dir)
+        echo_chdir(self.build_dir)
         os.system('make run')
+        echo_chdir(ABS_ROOT)
 
     def clean_logs(self):
         pinfo(f'Cleaning logs for {self.name} ')
-        os.chdir(self.build_dir)
+        echo_chdir(self.build_dir)
         os.system('make clean')
+        echo_chdir(ABS_ROOT)
 
     def delete_build(self):
         pinfo(f'Cleaning build temp files for {self.name} ')
-        os.chdir(self.build_dir)
+        echo_chdir(self.build_dir)
         os.system('make cleanall')
+        echo_chdir(ABS_ROOT)
 
     def delete_all(self):
         pinfo(f'Deleting all files for {self.name} ')
@@ -108,11 +120,24 @@ class TestCase:
 
 #TODO: move them to a separate file (maybe json?)
 WORK_DISTRIBUTION = {
+    'zhang-21.ece.cornell.edu' : [
+        TestCase('all2all', 32, 32),
+        TestCase('one2one', 32, 32) ,
+    ],
+    'zhang-22.ece.cornell.edu' : [
+        TestCase('grp4_all2all', 32, 32),
+        TestCase('grp4_all2all', 16, 32),
+    ],
+    'zhang-23.ece.cornell.edu' : [
+        TestCase('grp8_all2all', 32, 32),
+        TestCase('grp8_all2all', 16, 32),
+    ],
     'zhang-24.ece.cornell.edu' : [
-        TestCase('all2all', 32, 32),      TestCase('one2one', 32, 32) ,
-        TestCase('grp4_all2all', 32, 32), TestCase('grp4_all2all', 16, 32),
-        TestCase('grp8_all2all', 32, 32), TestCase('grp8_all2all', 16, 32),
-        TestCase('one2all', 1, 1),        TestCase('one2all', 1, 4), TestCase('one2all', 1, 8), TestCase('one2all', 1, 16), TestCase('one2all', 1, 32)
+        TestCase('one2all', 1, 1),
+        TestCase('one2all', 1, 4),
+        TestCase('one2all', 1, 8),
+        TestCase('one2all', 1, 16),
+        TestCase('one2all', 1, 32)
     ],
 }
 #TODO: move them to a separate file (maybe json?)
@@ -150,7 +175,7 @@ def main():
                     test_case.apply_floorplan((10,11,11))
                 test_case.create_build_files(BORAD_REPO_PATH, U280_XSA)
             elif args.option == 'build':
-                test_case.build_test()
+                test_case.build_test(no_host=True)
             elif args.option == 'run':
                 test_case.run_test()
             elif args.option == 'clean':
