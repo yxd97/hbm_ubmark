@@ -1,0 +1,25 @@
+# python files
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+
+# vscode config
+.vscode
+
+# build directories
+build*
+.Xil
+
+# runtime cache
+.run
+
+# generated files
+system.cfg
+emconfig.json
+host.cpp
+Makefile
+
+# log files
+*.log
+*.jou
