@@ -41,22 +41,34 @@ def generate_sp_tags_one2all(nch:int) -> List[str]:
     sp.append(f'sp=tg0.maxi:HBM[0:{nch-1}]\n')
     return sp
 
-def genetare_sp_tags_grp_all2all(ntg:int, nch:int, group_size:int) -> List[str]:
-    #TODO: implement this
-    sp = ['# Grouped connectivitiy not supported yet.\n']
+def genetare_sp_tags_grp_all2all(ntg:int, nch:int, nch_per_grp:int) -> List[str]:
+    if nch_per_grp not in [4, 8]:
+        raise ValueError(f'Unsupported connectivity of {nch_per_grp} channels per group.')
+    if nch % nch_per_grp != 0:
+        raise ValueError(f'The number of channels must be a multiple of {nch_per_grp} (num of channels per groups) for group connectivity.')
+    ngroups = nch // nch_per_grp
+    if ntg % ngroups != 0:
+        raise ValueError(f'The number of TGs must be a multiple of {ngroups} (num of groups) for group connectivity.')
+    ntgs_per_grp = ntg // ngroups
+    sp = []
+    for i in range(ntg):
+        grp_id = i // ntgs_per_grp
+        ch_lo = grp_id * nch_per_grp
+        ch_hi = ch_lo + nch_per_grp - 1
+        sp.append(f'sp=tg{i}.maxi:HBM[{ch_lo}:{ch_hi}]\n')
     return sp
 
 def generate_sp_tags(ntg:int, nch:int, connectivity:str) -> List[str]:
     if connectivity.startswith('grp'):
-        group_size = int(connectivity[3])
-        if group_size in [4, 8]:
-            return genetare_sp_tags_grp_all2all(ntg, nch, group_size)
-        else:
-            raise ValueError(f'Unsupported group size {group_size}')
+        nch_per_grp = int(connectivity.split('_')[0].strip('grp'))
+        return genetare_sp_tags_grp_all2all(ntg, nch, nch_per_grp)
+
+
+    elif connectivity == 'all2all':
+        return generate_sp_tags_all2all(ntg, nch)
+    elif connectivity == 'one2one':
+        return generate_sp_tags_one2one(ntg, nch)
+    elif connectivity == 'one2all':
+        return generate_sp_tags_one2all(nch)
     else:
-        if ntg == nch:
-            return generate_sp_tags_one2one(ntg, nch)
-        elif ntg == 1:
-            return generate_sp_tags_one2all(nch)
-        else:
-            return generate_sp_tags_all2all(ntg, nch)
+        raise ValueError(f'Unsupported connectivity {connectivity}')
