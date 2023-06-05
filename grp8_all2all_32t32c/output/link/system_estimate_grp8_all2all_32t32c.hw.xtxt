@@ -1,0 +1,804 @@
+===============================================================================
+Version:    v++ v2020.2 (64-bit)
+Build:      SW Build (by xbuild) on 2020-11-18-05:13:29
+Copyright:  Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Created:    Sat Jun  3 06:55:49 2023
+===============================================================================
+
+-------------------------------------------------------------------------------
+Design Name:             grp8_all2all_32t32c.hw
+Target Device:           xilinx:u280:xdma:201920.3
+Target Clock:            300.000000MHz
+Total number of kernels: 1
+-------------------------------------------------------------------------------
+
+Kernel Summary
+Kernel Name  Type  Target              OpenCL Library          Compute Units
+-----------  ----  ------------------  ----------------------  -------------
+hbm_tg       c     fpga0:OCL_REGION_0  grp8_all2all_32t32c.hw  32
+
+
+-------------------------------------------------------------------------------
+OpenCL Binary:     grp8_all2all_32t32c.hw
+Kernels mapped to: clc_region
+
+Timing Information (MHz)
+Compute Unit  Kernel Name  Module Name        Target Frequency  Estimated Frequency
+------------  -----------  -----------------  ----------------  -------------------
+tg0           hbm_tg       random_read_write  300.300293        411.015198
+tg0           hbm_tg       random_write       300.300293        411.015198
+tg0           hbm_tg       random_read        300.300293        411.015198
+tg0           hbm_tg       seq_write_burst    300.300293        411.015198
+tg0           hbm_tg       seq_write          300.300293        411.015198
+tg0           hbm_tg       seq_read_burst     300.300293        411.015198
+tg0           hbm_tg       seq_read           300.300293        411.015198
+tg0           hbm_tg       hbm_tg             300.300293        411.015198
+tg1           hbm_tg       random_read_write  300.300293        411.015198
+tg1           hbm_tg       random_write       300.300293        411.015198
+tg1           hbm_tg       random_read        300.300293        411.015198
+tg1           hbm_tg       seq_write_burst    300.300293        411.015198
+tg1           hbm_tg       seq_write          300.300293        411.015198
+tg1           hbm_tg       seq_read_burst     300.300293        411.015198
+tg1           hbm_tg       seq_read           300.300293        411.015198
+tg1           hbm_tg       hbm_tg             300.300293        411.015198
+tg2           hbm_tg       random_read_write  300.300293        411.015198
+tg2           hbm_tg       random_write       300.300293        411.015198
+tg2           hbm_tg       random_read        300.300293        411.015198
+tg2           hbm_tg       seq_write_burst    300.300293        411.015198
+tg2           hbm_tg       seq_write          300.300293        411.015198
+tg2           hbm_tg       seq_read_burst     300.300293        411.015198
+tg2           hbm_tg       seq_read           300.300293        411.015198
+tg2           hbm_tg       hbm_tg             300.300293        411.015198
+tg3           hbm_tg       random_read_write  300.300293        411.015198
+tg3           hbm_tg       random_write       300.300293        411.015198
+tg3           hbm_tg       random_read        300.300293        411.015198
+tg3           hbm_tg       seq_write_burst    300.300293        411.015198
+tg3           hbm_tg       seq_write          300.300293        411.015198
+tg3           hbm_tg       seq_read_burst     300.300293        411.015198
+tg3           hbm_tg       seq_read           300.300293        411.015198
+tg3           hbm_tg       hbm_tg             300.300293        411.015198
+tg4           hbm_tg       random_read_write  300.300293        411.015198
+tg4           hbm_tg       random_write       300.300293        411.015198
+tg4           hbm_tg       random_read        300.300293        411.015198
+tg4           hbm_tg       seq_write_burst    300.300293        411.015198
+tg4           hbm_tg       seq_write          300.300293        411.015198
+tg4           hbm_tg       seq_read_burst     300.300293        411.015198
+tg4           hbm_tg       seq_read           300.300293        411.015198
+tg4           hbm_tg       hbm_tg             300.300293        411.015198
+tg5           hbm_tg       random_read_write  300.300293        411.015198
+tg5           hbm_tg       random_write       300.300293        411.015198
+tg5           hbm_tg       random_read        300.300293        411.015198
+tg5           hbm_tg       seq_write_burst    300.300293        411.015198
+tg5           hbm_tg       seq_write          300.300293        411.015198
+tg5           hbm_tg       seq_read_burst     300.300293        411.015198
+tg5           hbm_tg       seq_read           300.300293        411.015198
+tg5           hbm_tg       hbm_tg             300.300293        411.015198
+tg6           hbm_tg       random_read_write  300.300293        411.015198
+tg6           hbm_tg       random_write       300.300293        411.015198
+tg6           hbm_tg       random_read        300.300293        411.015198
+tg6           hbm_tg       seq_write_burst    300.300293        411.015198
+tg6           hbm_tg       seq_write          300.300293        411.015198
+tg6           hbm_tg       seq_read_burst     300.300293        411.015198
+tg6           hbm_tg       seq_read           300.300293        411.015198
+tg6           hbm_tg       hbm_tg             300.300293        411.015198
+tg7           hbm_tg       random_read_write  300.300293        411.015198
+tg7           hbm_tg       random_write       300.300293        411.015198
+tg7           hbm_tg       random_read        300.300293        411.015198
+tg7           hbm_tg       seq_write_burst    300.300293        411.015198
+tg7           hbm_tg       seq_write          300.300293        411.015198
+tg7           hbm_tg       seq_read_burst     300.300293        411.015198
+tg7           hbm_tg       seq_read           300.300293        411.015198
+tg7           hbm_tg       hbm_tg             300.300293        411.015198
+tg8           hbm_tg       random_read_write  300.300293        411.015198
+tg8           hbm_tg       random_write       300.300293        411.015198
+tg8           hbm_tg       random_read        300.300293        411.015198
+tg8           hbm_tg       seq_write_burst    300.300293        411.015198
+tg8           hbm_tg       seq_write          300.300293        411.015198
+tg8           hbm_tg       seq_read_burst     300.300293        411.015198
+tg8           hbm_tg       seq_read           300.300293        411.015198
+tg8           hbm_tg       hbm_tg             300.300293        411.015198
+tg9           hbm_tg       random_read_write  300.300293        411.015198
+tg9           hbm_tg       random_write       300.300293        411.015198
+tg9           hbm_tg       random_read        300.300293        411.015198
+tg9           hbm_tg       seq_write_burst    300.300293        411.015198
+tg9           hbm_tg       seq_write          300.300293        411.015198
+tg9           hbm_tg       seq_read_burst     300.300293        411.015198
+tg9           hbm_tg       seq_read           300.300293        411.015198
+tg9           hbm_tg       hbm_tg             300.300293        411.015198
+tg10          hbm_tg       random_read_write  300.300293        411.015198
+tg10          hbm_tg       random_write       300.300293        411.015198
+tg10          hbm_tg       random_read        300.300293        411.015198
+tg10          hbm_tg       seq_write_burst    300.300293        411.015198
+tg10          hbm_tg       seq_write          300.300293        411.015198
+tg10          hbm_tg       seq_read_burst     300.300293        411.015198
+tg10          hbm_tg       seq_read           300.300293        411.015198
+tg10          hbm_tg       hbm_tg             300.300293        411.015198
+tg11          hbm_tg       random_read_write  300.300293        411.015198
+tg11          hbm_tg       random_write       300.300293        411.015198
+tg11          hbm_tg       random_read        300.300293        411.015198
+tg11          hbm_tg       seq_write_burst    300.300293        411.015198
+tg11          hbm_tg       seq_write          300.300293        411.015198
+tg11          hbm_tg       seq_read_burst     300.300293        411.015198
+tg11          hbm_tg       seq_read           300.300293        411.015198
+tg11          hbm_tg       hbm_tg             300.300293        411.015198
+tg12          hbm_tg       random_read_write  300.300293        411.015198
+tg12          hbm_tg       random_write       300.300293        411.015198
+tg12          hbm_tg       random_read        300.300293        411.015198
+tg12          hbm_tg       seq_write_burst    300.300293        411.015198
+tg12          hbm_tg       seq_write          300.300293        411.015198
+tg12          hbm_tg       seq_read_burst     300.300293        411.015198
+tg12          hbm_tg       seq_read           300.300293        411.015198
+tg12          hbm_tg       hbm_tg             300.300293        411.015198
+tg13          hbm_tg       random_read_write  300.300293        411.015198
+tg13          hbm_tg       random_write       300.300293        411.015198
+tg13          hbm_tg       random_read        300.300293        411.015198
+tg13          hbm_tg       seq_write_burst    300.300293        411.015198
+tg13          hbm_tg       seq_write          300.300293        411.015198
+tg13          hbm_tg       seq_read_burst     300.300293        411.015198
+tg13          hbm_tg       seq_read           300.300293        411.015198
+tg13          hbm_tg       hbm_tg             300.300293        411.015198
+tg14          hbm_tg       random_read_write  300.300293        411.015198
+tg14          hbm_tg       random_write       300.300293        411.015198
+tg14          hbm_tg       random_read        300.300293        411.015198
+tg14          hbm_tg       seq_write_burst    300.300293        411.015198
+tg14          hbm_tg       seq_write          300.300293        411.015198
+tg14          hbm_tg       seq_read_burst     300.300293        411.015198
+tg14          hbm_tg       seq_read           300.300293        411.015198
+tg14          hbm_tg       hbm_tg             300.300293        411.015198
+tg15          hbm_tg       random_read_write  300.300293        411.015198
+tg15          hbm_tg       random_write       300.300293        411.015198
+tg15          hbm_tg       random_read        300.300293        411.015198
+tg15          hbm_tg       seq_write_burst    300.300293        411.015198
+tg15          hbm_tg       seq_write          300.300293        411.015198
+tg15          hbm_tg       seq_read_burst     300.300293        411.015198
+tg15          hbm_tg       seq_read           300.300293        411.015198
+tg15          hbm_tg       hbm_tg             300.300293        411.015198
+tg16          hbm_tg       random_read_write  300.300293        411.015198
+tg16          hbm_tg       random_write       300.300293        411.015198
+tg16          hbm_tg       random_read        300.300293        411.015198
+tg16          hbm_tg       seq_write_burst    300.300293        411.015198
+tg16          hbm_tg       seq_write          300.300293        411.015198
+tg16          hbm_tg       seq_read_burst     300.300293        411.015198
+tg16          hbm_tg       seq_read           300.300293        411.015198
+tg16          hbm_tg       hbm_tg             300.300293        411.015198
+tg17          hbm_tg       random_read_write  300.300293        411.015198
+tg17          hbm_tg       random_write       300.300293        411.015198
+tg17          hbm_tg       random_read        300.300293        411.015198
+tg17          hbm_tg       seq_write_burst    300.300293        411.015198
+tg17          hbm_tg       seq_write          300.300293        411.015198
+tg17          hbm_tg       seq_read_burst     300.300293        411.015198
+tg17          hbm_tg       seq_read           300.300293        411.015198
+tg17          hbm_tg       hbm_tg             300.300293        411.015198
+tg18          hbm_tg       random_read_write  300.300293        411.015198
+tg18          hbm_tg       random_write       300.300293        411.015198
+tg18          hbm_tg       random_read        300.300293        411.015198
+tg18          hbm_tg       seq_write_burst    300.300293        411.015198
+tg18          hbm_tg       seq_write          300.300293        411.015198
+tg18          hbm_tg       seq_read_burst     300.300293        411.015198
+tg18          hbm_tg       seq_read           300.300293        411.015198
+tg18          hbm_tg       hbm_tg             300.300293        411.015198
+tg19          hbm_tg       random_read_write  300.300293        411.015198
+tg19          hbm_tg       random_write       300.300293        411.015198
+tg19          hbm_tg       random_read        300.300293        411.015198
+tg19          hbm_tg       seq_write_burst    300.300293        411.015198
+tg19          hbm_tg       seq_write          300.300293        411.015198
+tg19          hbm_tg       seq_read_burst     300.300293        411.015198
+tg19          hbm_tg       seq_read           300.300293        411.015198
+tg19          hbm_tg       hbm_tg             300.300293        411.015198
+tg20          hbm_tg       random_read_write  300.300293        411.015198
+tg20          hbm_tg       random_write       300.300293        411.015198
+tg20          hbm_tg       random_read        300.300293        411.015198
+tg20          hbm_tg       seq_write_burst    300.300293        411.015198
+tg20          hbm_tg       seq_write          300.300293        411.015198
+tg20          hbm_tg       seq_read_burst     300.300293        411.015198
+tg20          hbm_tg       seq_read           300.300293        411.015198
+tg20          hbm_tg       hbm_tg             300.300293        411.015198
+tg21          hbm_tg       random_read_write  300.300293        411.015198
+tg21          hbm_tg       random_write       300.300293        411.015198
+tg21          hbm_tg       random_read        300.300293        411.015198
+tg21          hbm_tg       seq_write_burst    300.300293        411.015198
+tg21          hbm_tg       seq_write          300.300293        411.015198
+tg21          hbm_tg       seq_read_burst     300.300293        411.015198
+tg21          hbm_tg       seq_read           300.300293        411.015198
+tg21          hbm_tg       hbm_tg             300.300293        411.015198
+tg22          hbm_tg       random_read_write  300.300293        411.015198
+tg22          hbm_tg       random_write       300.300293        411.015198
+tg22          hbm_tg       random_read        300.300293        411.015198
+tg22          hbm_tg       seq_write_burst    300.300293        411.015198
+tg22          hbm_tg       seq_write          300.300293        411.015198
+tg22          hbm_tg       seq_read_burst     300.300293        411.015198
+tg22          hbm_tg       seq_read           300.300293        411.015198
+tg22          hbm_tg       hbm_tg             300.300293        411.015198
+tg23          hbm_tg       random_read_write  300.300293        411.015198
+tg23          hbm_tg       random_write       300.300293        411.015198
+tg23          hbm_tg       random_read        300.300293        411.015198
+tg23          hbm_tg       seq_write_burst    300.300293        411.015198
+tg23          hbm_tg       seq_write          300.300293        411.015198
+tg23          hbm_tg       seq_read_burst     300.300293        411.015198
+tg23          hbm_tg       seq_read           300.300293        411.015198
+tg23          hbm_tg       hbm_tg             300.300293        411.015198
+tg24          hbm_tg       random_read_write  300.300293        411.015198
+tg24          hbm_tg       random_write       300.300293        411.015198
+tg24          hbm_tg       random_read        300.300293        411.015198
+tg24          hbm_tg       seq_write_burst    300.300293        411.015198
+tg24          hbm_tg       seq_write          300.300293        411.015198
+tg24          hbm_tg       seq_read_burst     300.300293        411.015198
+tg24          hbm_tg       seq_read           300.300293        411.015198
+tg24          hbm_tg       hbm_tg             300.300293        411.015198
+tg25          hbm_tg       random_read_write  300.300293        411.015198
+tg25          hbm_tg       random_write       300.300293        411.015198
+tg25          hbm_tg       random_read        300.300293        411.015198
+tg25          hbm_tg       seq_write_burst    300.300293        411.015198
+tg25          hbm_tg       seq_write          300.300293        411.015198
+tg25          hbm_tg       seq_read_burst     300.300293        411.015198
+tg25          hbm_tg       seq_read           300.300293        411.015198
+tg25          hbm_tg       hbm_tg             300.300293        411.015198
+tg26          hbm_tg       random_read_write  300.300293        411.015198
+tg26          hbm_tg       random_write       300.300293        411.015198
+tg26          hbm_tg       random_read        300.300293        411.015198
+tg26          hbm_tg       seq_write_burst    300.300293        411.015198
+tg26          hbm_tg       seq_write          300.300293        411.015198
+tg26          hbm_tg       seq_read_burst     300.300293        411.015198
+tg26          hbm_tg       seq_read           300.300293        411.015198
+tg26          hbm_tg       hbm_tg             300.300293        411.015198
+tg27          hbm_tg       random_read_write  300.300293        411.015198
+tg27          hbm_tg       random_write       300.300293        411.015198
+tg27          hbm_tg       random_read        300.300293        411.015198
+tg27          hbm_tg       seq_write_burst    300.300293        411.015198
+tg27          hbm_tg       seq_write          300.300293        411.015198
+tg27          hbm_tg       seq_read_burst     300.300293        411.015198
+tg27          hbm_tg       seq_read           300.300293        411.015198
+tg27          hbm_tg       hbm_tg             300.300293        411.015198
+tg28          hbm_tg       random_read_write  300.300293        411.015198
+tg28          hbm_tg       random_write       300.300293        411.015198
+tg28          hbm_tg       random_read        300.300293        411.015198
+tg28          hbm_tg       seq_write_burst    300.300293        411.015198
+tg28          hbm_tg       seq_write          300.300293        411.015198
+tg28          hbm_tg       seq_read_burst     300.300293        411.015198
+tg28          hbm_tg       seq_read           300.300293        411.015198
+tg28          hbm_tg       hbm_tg             300.300293        411.015198
+tg29          hbm_tg       random_read_write  300.300293        411.015198
+tg29          hbm_tg       random_write       300.300293        411.015198
+tg29          hbm_tg       random_read        300.300293        411.015198
+tg29          hbm_tg       seq_write_burst    300.300293        411.015198
+tg29          hbm_tg       seq_write          300.300293        411.015198
+tg29          hbm_tg       seq_read_burst     300.300293        411.015198
+tg29          hbm_tg       seq_read           300.300293        411.015198
+tg29          hbm_tg       hbm_tg             300.300293        411.015198
+tg30          hbm_tg       random_read_write  300.300293        411.015198
+tg30          hbm_tg       random_write       300.300293        411.015198
+tg30          hbm_tg       random_read        300.300293        411.015198
+tg30          hbm_tg       seq_write_burst    300.300293        411.015198
+tg30          hbm_tg       seq_write          300.300293        411.015198
+tg30          hbm_tg       seq_read_burst     300.300293        411.015198
+tg30          hbm_tg       seq_read           300.300293        411.015198
+tg30          hbm_tg       hbm_tg             300.300293        411.015198
+tg31          hbm_tg       random_read_write  300.300293        411.015198
+tg31          hbm_tg       random_write       300.300293        411.015198
+tg31          hbm_tg       random_read        300.300293        411.015198
+tg31          hbm_tg       seq_write_burst    300.300293        411.015198
+tg31          hbm_tg       seq_write          300.300293        411.015198
+tg31          hbm_tg       seq_read_burst     300.300293        411.015198
+tg31          hbm_tg       seq_read           300.300293        411.015198
+tg31          hbm_tg       hbm_tg             300.300293        411.015198
+
+Latency Information
+Compute Unit  Kernel Name  Module Name        Start Interval  Best (cycles)  Avg (cycles)  Worst (cycles)  Best (absolute)  Avg (absolute)  Worst (absolute)
+------------  -----------  -----------------  --------------  -------------  ------------  --------------  ---------------  --------------  ----------------
+tg0           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg0           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg1           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg2           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg3           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg4           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg5           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg6           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg7           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg8           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg9           hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg10          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg11          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg12          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg13          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg14          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg15          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg16          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg17          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg18          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg19          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg20          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg21          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg22          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg23          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg24          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg25          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg26          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg27          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg28          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg29          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg30          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       random_read_write  undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       random_write       undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       random_read        undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       seq_write_burst    undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       seq_write          undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       seq_read_burst     undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       seq_read           undef           undef          undef         undef           undef            undef           undef
+tg31          hbm_tg       hbm_tg             undef           undef          undef         undef           undef            undef           undef
+
+Area Information
+Compute Unit  Kernel Name  Module Name        FF     LUT    DSP  BRAM  URAM
+------------  -----------  -----------------  -----  -----  ---  ----  ----
+tg0           hbm_tg       random_read_write  3781   2102   0    0     0
+tg0           hbm_tg       random_write       3219   2053   0    0     0
+tg0           hbm_tg       random_read        3177   2018   0    0     0
+tg0           hbm_tg       seq_write_burst    621    470    0    0     0
+tg0           hbm_tg       seq_write          650    457    0    0     0
+tg0           hbm_tg       seq_read_burst     621    459    0    0     0
+tg0           hbm_tg       seq_read           618    434    0    0     0
+tg0           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg1           hbm_tg       random_read_write  3781   2102   0    0     0
+tg1           hbm_tg       random_write       3219   2053   0    0     0
+tg1           hbm_tg       random_read        3177   2018   0    0     0
+tg1           hbm_tg       seq_write_burst    621    470    0    0     0
+tg1           hbm_tg       seq_write          650    457    0    0     0
+tg1           hbm_tg       seq_read_burst     621    459    0    0     0
+tg1           hbm_tg       seq_read           618    434    0    0     0
+tg1           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg2           hbm_tg       random_read_write  3781   2102   0    0     0
+tg2           hbm_tg       random_write       3219   2053   0    0     0
+tg2           hbm_tg       random_read        3177   2018   0    0     0
+tg2           hbm_tg       seq_write_burst    621    470    0    0     0
+tg2           hbm_tg       seq_write          650    457    0    0     0
+tg2           hbm_tg       seq_read_burst     621    459    0    0     0
+tg2           hbm_tg       seq_read           618    434    0    0     0
+tg2           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg3           hbm_tg       random_read_write  3781   2102   0    0     0
+tg3           hbm_tg       random_write       3219   2053   0    0     0
+tg3           hbm_tg       random_read        3177   2018   0    0     0
+tg3           hbm_tg       seq_write_burst    621    470    0    0     0
+tg3           hbm_tg       seq_write          650    457    0    0     0
+tg3           hbm_tg       seq_read_burst     621    459    0    0     0
+tg3           hbm_tg       seq_read           618    434    0    0     0
+tg3           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg4           hbm_tg       random_read_write  3781   2102   0    0     0
+tg4           hbm_tg       random_write       3219   2053   0    0     0
+tg4           hbm_tg       random_read        3177   2018   0    0     0
+tg4           hbm_tg       seq_write_burst    621    470    0    0     0
+tg4           hbm_tg       seq_write          650    457    0    0     0
+tg4           hbm_tg       seq_read_burst     621    459    0    0     0
+tg4           hbm_tg       seq_read           618    434    0    0     0
+tg4           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg5           hbm_tg       random_read_write  3781   2102   0    0     0
+tg5           hbm_tg       random_write       3219   2053   0    0     0
+tg5           hbm_tg       random_read        3177   2018   0    0     0
+tg5           hbm_tg       seq_write_burst    621    470    0    0     0
+tg5           hbm_tg       seq_write          650    457    0    0     0
+tg5           hbm_tg       seq_read_burst     621    459    0    0     0
+tg5           hbm_tg       seq_read           618    434    0    0     0
+tg5           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg6           hbm_tg       random_read_write  3781   2102   0    0     0
+tg6           hbm_tg       random_write       3219   2053   0    0     0
+tg6           hbm_tg       random_read        3177   2018   0    0     0
+tg6           hbm_tg       seq_write_burst    621    470    0    0     0
+tg6           hbm_tg       seq_write          650    457    0    0     0
+tg6           hbm_tg       seq_read_burst     621    459    0    0     0
+tg6           hbm_tg       seq_read           618    434    0    0     0
+tg6           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg7           hbm_tg       random_read_write  3781   2102   0    0     0
+tg7           hbm_tg       random_write       3219   2053   0    0     0
+tg7           hbm_tg       random_read        3177   2018   0    0     0
+tg7           hbm_tg       seq_write_burst    621    470    0    0     0
+tg7           hbm_tg       seq_write          650    457    0    0     0
+tg7           hbm_tg       seq_read_burst     621    459    0    0     0
+tg7           hbm_tg       seq_read           618    434    0    0     0
+tg7           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg8           hbm_tg       random_read_write  3781   2102   0    0     0
+tg8           hbm_tg       random_write       3219   2053   0    0     0
+tg8           hbm_tg       random_read        3177   2018   0    0     0
+tg8           hbm_tg       seq_write_burst    621    470    0    0     0
+tg8           hbm_tg       seq_write          650    457    0    0     0
+tg8           hbm_tg       seq_read_burst     621    459    0    0     0
+tg8           hbm_tg       seq_read           618    434    0    0     0
+tg8           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg9           hbm_tg       random_read_write  3781   2102   0    0     0
+tg9           hbm_tg       random_write       3219   2053   0    0     0
+tg9           hbm_tg       random_read        3177   2018   0    0     0
+tg9           hbm_tg       seq_write_burst    621    470    0    0     0
+tg9           hbm_tg       seq_write          650    457    0    0     0
+tg9           hbm_tg       seq_read_burst     621    459    0    0     0
+tg9           hbm_tg       seq_read           618    434    0    0     0
+tg9           hbm_tg       hbm_tg             14401  10967  0    30    8
+tg10          hbm_tg       random_read_write  3781   2102   0    0     0
+tg10          hbm_tg       random_write       3219   2053   0    0     0
+tg10          hbm_tg       random_read        3177   2018   0    0     0
+tg10          hbm_tg       seq_write_burst    621    470    0    0     0
+tg10          hbm_tg       seq_write          650    457    0    0     0
+tg10          hbm_tg       seq_read_burst     621    459    0    0     0
+tg10          hbm_tg       seq_read           618    434    0    0     0
+tg10          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg11          hbm_tg       random_read_write  3781   2102   0    0     0
+tg11          hbm_tg       random_write       3219   2053   0    0     0
+tg11          hbm_tg       random_read        3177   2018   0    0     0
+tg11          hbm_tg       seq_write_burst    621    470    0    0     0
+tg11          hbm_tg       seq_write          650    457    0    0     0
+tg11          hbm_tg       seq_read_burst     621    459    0    0     0
+tg11          hbm_tg       seq_read           618    434    0    0     0
+tg11          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg12          hbm_tg       random_read_write  3781   2102   0    0     0
+tg12          hbm_tg       random_write       3219   2053   0    0     0
+tg12          hbm_tg       random_read        3177   2018   0    0     0
+tg12          hbm_tg       seq_write_burst    621    470    0    0     0
+tg12          hbm_tg       seq_write          650    457    0    0     0
+tg12          hbm_tg       seq_read_burst     621    459    0    0     0
+tg12          hbm_tg       seq_read           618    434    0    0     0
+tg12          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg13          hbm_tg       random_read_write  3781   2102   0    0     0
+tg13          hbm_tg       random_write       3219   2053   0    0     0
+tg13          hbm_tg       random_read        3177   2018   0    0     0
+tg13          hbm_tg       seq_write_burst    621    470    0    0     0
+tg13          hbm_tg       seq_write          650    457    0    0     0
+tg13          hbm_tg       seq_read_burst     621    459    0    0     0
+tg13          hbm_tg       seq_read           618    434    0    0     0
+tg13          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg14          hbm_tg       random_read_write  3781   2102   0    0     0
+tg14          hbm_tg       random_write       3219   2053   0    0     0
+tg14          hbm_tg       random_read        3177   2018   0    0     0
+tg14          hbm_tg       seq_write_burst    621    470    0    0     0
+tg14          hbm_tg       seq_write          650    457    0    0     0
+tg14          hbm_tg       seq_read_burst     621    459    0    0     0
+tg14          hbm_tg       seq_read           618    434    0    0     0
+tg14          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg15          hbm_tg       random_read_write  3781   2102   0    0     0
+tg15          hbm_tg       random_write       3219   2053   0    0     0
+tg15          hbm_tg       random_read        3177   2018   0    0     0
+tg15          hbm_tg       seq_write_burst    621    470    0    0     0
+tg15          hbm_tg       seq_write          650    457    0    0     0
+tg15          hbm_tg       seq_read_burst     621    459    0    0     0
+tg15          hbm_tg       seq_read           618    434    0    0     0
+tg15          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg16          hbm_tg       random_read_write  3781   2102   0    0     0
+tg16          hbm_tg       random_write       3219   2053   0    0     0
+tg16          hbm_tg       random_read        3177   2018   0    0     0
+tg16          hbm_tg       seq_write_burst    621    470    0    0     0
+tg16          hbm_tg       seq_write          650    457    0    0     0
+tg16          hbm_tg       seq_read_burst     621    459    0    0     0
+tg16          hbm_tg       seq_read           618    434    0    0     0
+tg16          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg17          hbm_tg       random_read_write  3781   2102   0    0     0
+tg17          hbm_tg       random_write       3219   2053   0    0     0
+tg17          hbm_tg       random_read        3177   2018   0    0     0
+tg17          hbm_tg       seq_write_burst    621    470    0    0     0
+tg17          hbm_tg       seq_write          650    457    0    0     0
+tg17          hbm_tg       seq_read_burst     621    459    0    0     0
+tg17          hbm_tg       seq_read           618    434    0    0     0
+tg17          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg18          hbm_tg       random_read_write  3781   2102   0    0     0
+tg18          hbm_tg       random_write       3219   2053   0    0     0
+tg18          hbm_tg       random_read        3177   2018   0    0     0
+tg18          hbm_tg       seq_write_burst    621    470    0    0     0
+tg18          hbm_tg       seq_write          650    457    0    0     0
+tg18          hbm_tg       seq_read_burst     621    459    0    0     0
+tg18          hbm_tg       seq_read           618    434    0    0     0
+tg18          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg19          hbm_tg       random_read_write  3781   2102   0    0     0
+tg19          hbm_tg       random_write       3219   2053   0    0     0
+tg19          hbm_tg       random_read        3177   2018   0    0     0
+tg19          hbm_tg       seq_write_burst    621    470    0    0     0
+tg19          hbm_tg       seq_write          650    457    0    0     0
+tg19          hbm_tg       seq_read_burst     621    459    0    0     0
+tg19          hbm_tg       seq_read           618    434    0    0     0
+tg19          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg20          hbm_tg       random_read_write  3781   2102   0    0     0
+tg20          hbm_tg       random_write       3219   2053   0    0     0
+tg20          hbm_tg       random_read        3177   2018   0    0     0
+tg20          hbm_tg       seq_write_burst    621    470    0    0     0
+tg20          hbm_tg       seq_write          650    457    0    0     0
+tg20          hbm_tg       seq_read_burst     621    459    0    0     0
+tg20          hbm_tg       seq_read           618    434    0    0     0
+tg20          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg21          hbm_tg       random_read_write  3781   2102   0    0     0
+tg21          hbm_tg       random_write       3219   2053   0    0     0
+tg21          hbm_tg       random_read        3177   2018   0    0     0
+tg21          hbm_tg       seq_write_burst    621    470    0    0     0
+tg21          hbm_tg       seq_write          650    457    0    0     0
+tg21          hbm_tg       seq_read_burst     621    459    0    0     0
+tg21          hbm_tg       seq_read           618    434    0    0     0
+tg21          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg22          hbm_tg       random_read_write  3781   2102   0    0     0
+tg22          hbm_tg       random_write       3219   2053   0    0     0
+tg22          hbm_tg       random_read        3177   2018   0    0     0
+tg22          hbm_tg       seq_write_burst    621    470    0    0     0
+tg22          hbm_tg       seq_write          650    457    0    0     0
+tg22          hbm_tg       seq_read_burst     621    459    0    0     0
+tg22          hbm_tg       seq_read           618    434    0    0     0
+tg22          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg23          hbm_tg       random_read_write  3781   2102   0    0     0
+tg23          hbm_tg       random_write       3219   2053   0    0     0
+tg23          hbm_tg       random_read        3177   2018   0    0     0
+tg23          hbm_tg       seq_write_burst    621    470    0    0     0
+tg23          hbm_tg       seq_write          650    457    0    0     0
+tg23          hbm_tg       seq_read_burst     621    459    0    0     0
+tg23          hbm_tg       seq_read           618    434    0    0     0
+tg23          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg24          hbm_tg       random_read_write  3781   2102   0    0     0
+tg24          hbm_tg       random_write       3219   2053   0    0     0
+tg24          hbm_tg       random_read        3177   2018   0    0     0
+tg24          hbm_tg       seq_write_burst    621    470    0    0     0
+tg24          hbm_tg       seq_write          650    457    0    0     0
+tg24          hbm_tg       seq_read_burst     621    459    0    0     0
+tg24          hbm_tg       seq_read           618    434    0    0     0
+tg24          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg25          hbm_tg       random_read_write  3781   2102   0    0     0
+tg25          hbm_tg       random_write       3219   2053   0    0     0
+tg25          hbm_tg       random_read        3177   2018   0    0     0
+tg25          hbm_tg       seq_write_burst    621    470    0    0     0
+tg25          hbm_tg       seq_write          650    457    0    0     0
+tg25          hbm_tg       seq_read_burst     621    459    0    0     0
+tg25          hbm_tg       seq_read           618    434    0    0     0
+tg25          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg26          hbm_tg       random_read_write  3781   2102   0    0     0
+tg26          hbm_tg       random_write       3219   2053   0    0     0
+tg26          hbm_tg       random_read        3177   2018   0    0     0
+tg26          hbm_tg       seq_write_burst    621    470    0    0     0
+tg26          hbm_tg       seq_write          650    457    0    0     0
+tg26          hbm_tg       seq_read_burst     621    459    0    0     0
+tg26          hbm_tg       seq_read           618    434    0    0     0
+tg26          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg27          hbm_tg       random_read_write  3781   2102   0    0     0
+tg27          hbm_tg       random_write       3219   2053   0    0     0
+tg27          hbm_tg       random_read        3177   2018   0    0     0
+tg27          hbm_tg       seq_write_burst    621    470    0    0     0
+tg27          hbm_tg       seq_write          650    457    0    0     0
+tg27          hbm_tg       seq_read_burst     621    459    0    0     0
+tg27          hbm_tg       seq_read           618    434    0    0     0
+tg27          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg28          hbm_tg       random_read_write  3781   2102   0    0     0
+tg28          hbm_tg       random_write       3219   2053   0    0     0
+tg28          hbm_tg       random_read        3177   2018   0    0     0
+tg28          hbm_tg       seq_write_burst    621    470    0    0     0
+tg28          hbm_tg       seq_write          650    457    0    0     0
+tg28          hbm_tg       seq_read_burst     621    459    0    0     0
+tg28          hbm_tg       seq_read           618    434    0    0     0
+tg28          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg29          hbm_tg       random_read_write  3781   2102   0    0     0
+tg29          hbm_tg       random_write       3219   2053   0    0     0
+tg29          hbm_tg       random_read        3177   2018   0    0     0
+tg29          hbm_tg       seq_write_burst    621    470    0    0     0
+tg29          hbm_tg       seq_write          650    457    0    0     0
+tg29          hbm_tg       seq_read_burst     621    459    0    0     0
+tg29          hbm_tg       seq_read           618    434    0    0     0
+tg29          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg30          hbm_tg       random_read_write  3781   2102   0    0     0
+tg30          hbm_tg       random_write       3219   2053   0    0     0
+tg30          hbm_tg       random_read        3177   2018   0    0     0
+tg30          hbm_tg       seq_write_burst    621    470    0    0     0
+tg30          hbm_tg       seq_write          650    457    0    0     0
+tg30          hbm_tg       seq_read_burst     621    459    0    0     0
+tg30          hbm_tg       seq_read           618    434    0    0     0
+tg30          hbm_tg       hbm_tg             14401  10967  0    30    8
+tg31          hbm_tg       random_read_write  3781   2102   0    0     0
+tg31          hbm_tg       random_write       3219   2053   0    0     0
+tg31          hbm_tg       random_read        3177   2018   0    0     0
+tg31          hbm_tg       seq_write_burst    621    470    0    0     0
+tg31          hbm_tg       seq_write          650    457    0    0     0
+tg31          hbm_tg       seq_read_burst     621    459    0    0     0
+tg31          hbm_tg       seq_read           618    434    0    0     0
+tg31          hbm_tg       hbm_tg             14401  10967  0    30    8
+-------------------------------------------------------------------------------

@@ -1,0 +1,2118 @@
+<ENTRY>
+{
+ "thisFile": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/grp8_all2all_32t32c.hw.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jun  2 19:35:52 2023",
+ "timestampMillis": "1685748952744",
+ "buildStep": {
+  "cmdId": "73df4a82-191e-48bc-b67a-acf9c9c1fd0f",
+  "name": "v++",
+  "logFile": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/link.steps.log",
+  "commandLine": "/opt/xilinx/Xilinx_Vivado_vitis_2020.2/Vitis/2020.2/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw --platform /work/shared/common/CAD_tool/xilinx/platforms//xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm --save-temps --temp_dir ../build/link_hw --report_dir ../output --log_dir ../build/logs --kernel_frequency 300 --config system.cfg -l -o ../output/grp8_all2all_32t32c.hw.xclbin ../build/compile_hw/hbm_tg.xo ",
+  "args": [
+   "-t",
+   "hw",
+   "--platform",
+   "/work/shared/common/CAD_tool/xilinx/platforms//xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm",
+   "--save-temps",
+   "--temp_dir",
+   "../build/link_hw",
+   "--report_dir",
+   "../output",
+   "--log_dir",
+   "../build/logs",
+   "--kernel_frequency",
+   "300",
+   "--config",
+   "system.cfg",
+   "-l",
+   "-o",
+   "../output/grp8_all2all_32t32c.hw.xclbin",
+   "../build/compile_hw/hbm_tg.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/system.cfg",
+    "content": "# Testcase: grp8_all2all_32t32c\n[connectivity]\nnk=hbm_tg:32:tg0.tg1.tg2.tg3.tg4.tg5.tg6.tg7.tg8.tg9.tg10.tg11.tg12.tg13.tg14.tg15.tg16.tg17.tg18.tg19.tg20.tg21.tg22.tg23.tg24.tg25.tg26.tg27.tg28.tg29.tg30.tg31\nslr=tg0:SLR0\nslr=tg1:SLR0\nslr=tg2:SLR0\nslr=tg3:SLR0\nslr=tg4:SLR0\nslr=tg5:SLR0\nslr=tg6:SLR0\nslr=tg7:SLR0\nslr=tg8:SLR0\nslr=tg9:SLR0\nslr=tg10:SLR1\nslr=tg11:SLR1\nslr=tg12:SLR1\nslr=tg13:SLR1\nslr=tg14:SLR1\nslr=tg15:SLR1\nslr=tg16:SLR1\nslr=tg17:SLR1\nslr=tg18:SLR1\nslr=tg19:SLR1\nslr=tg20:SLR1\nslr=tg21:SLR2\nslr=tg22:SLR2\nslr=tg23:SLR2\nslr=tg24:SLR2\nslr=tg25:SLR2\nslr=tg26:SLR2\nslr=tg27:SLR2\nslr=tg28:SLR2\nslr=tg29:SLR2\nslr=tg30:SLR2\nslr=tg31:SLR2\nsp=tg0.maxi:HBM[0:7]\nsp=tg1.maxi:HBM[0:7]\nsp=tg2.maxi:HBM[0:7]\nsp=tg3.maxi:HBM[0:7]\nsp=tg4.maxi:HBM[0:7]\nsp=tg5.maxi:HBM[0:7]\nsp=tg6.maxi:HBM[0:7]\nsp=tg7.maxi:HBM[0:7]\nsp=tg8.maxi:HBM[8:15]\nsp=tg9.maxi:HBM[8:15]\nsp=tg10.maxi:HBM[8:15]\nsp=tg11.maxi:HBM[8:15]\nsp=tg12.maxi:HBM[8:15]\nsp=tg13.maxi:HBM[8:15]\nsp=tg14.maxi:HBM[8:15]\nsp=tg15.maxi:HBM[8:15]\nsp=tg16.maxi:HBM[16:23]\nsp=tg17.maxi:HBM[16:23]\nsp=tg18.maxi:HBM[16:23]\nsp=tg19.maxi:HBM[16:23]\nsp=tg20.maxi:HBM[16:23]\nsp=tg21.maxi:HBM[16:23]\nsp=tg22.maxi:HBM[16:23]\nsp=tg23.maxi:HBM[16:23]\nsp=tg24.maxi:HBM[24:31]\nsp=tg25.maxi:HBM[24:31]\nsp=tg26.maxi:HBM[24:31]\nsp=tg27.maxi:HBM[24:31]\nsp=tg28.maxi:HBM[24:31]\nsp=tg29.maxi:HBM[24:31]\nsp=tg30.maxi:HBM[24:31]\nsp=tg31.maxi:HBM[24:31]\n"
+   }
+  ],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:35:52 2023",
+ "timestampMillis": "1685748952747",
+ "status": {
+  "cmdId": "73df4a82-191e-48bc-b67a-acf9c9c1fd0f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Jun  2 19:36:00 2023",
+ "timestampMillis": "1685748960175",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u280_xdma_201920_3.xpfm",
+  "hardwareDsa": "xilinx_u280_xdma_201920_3.xsa",
+  "platformDirectory": "/work/shared/common/CAD_tool/xilinx/platforms/xilinx_u280_xdma_201920_3",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "grp8_all2all_32t32c.hw",
+    "file": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/grp8_all2all_32t32c.hw.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "hbm_tg",
+     "file": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/compile_hw/hbm_tg.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xo/hbm_tg/hbm_tg/cpu_sources/hbm_tg.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "tg0",
+     "tg1",
+     "tg2",
+     "tg3",
+     "tg4",
+     "tg5",
+     "tg6",
+     "tg7",
+     "tg8",
+     "tg9",
+     "tg10",
+     "tg11",
+     "tg12",
+     "tg13",
+     "tg14",
+     "tg15",
+     "tg16",
+     "tg17",
+     "tg18",
+     "tg19",
+     "tg20",
+     "tg21",
+     "tg22",
+     "tg23",
+     "tg24",
+     "tg25",
+     "tg26",
+     "tg27",
+     "tg28",
+     "tg29",
+     "tg30",
+     "tg31"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2020.2. SW Build (by xbuild) on 2020-11-18-05:13:29"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jun  2 19:36:00 2023",
+ "timestampMillis": "1685748960616",
+ "buildStep": {
+  "cmdId": "83d9792a-6dc1-40f4-bdfd-774326ec2161",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/compile_hw/hbm_tg.xo -keep --config /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/syslinkConfig.ini --xpfm /work/shared/common/CAD_tool/xilinx/platforms/xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm --target hw --output_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int --temp_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/sys_link",
+  "args": [
+   "--xo",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/compile_hw/hbm_tg.xo",
+   "-keep",
+   "--config",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/work/shared/common/CAD_tool/xilinx/platforms/xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int",
+   "--temp_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/syslinkConfig.ini",
+    "content": "nk=hbm_tg:32:tg0.tg1.tg2.tg3.tg4.tg5.tg6.tg7.tg8.tg9.tg10.tg11.tg12.tg13.tg14.tg15.tg16.tg17.tg18.tg19.tg20.tg21.tg22.tg23.tg24.tg25.tg26.tg27.tg28.tg29.tg30.tg31\nsp=tg0.maxi:HBM[0:7]\nsp=tg1.maxi:HBM[0:7]\nsp=tg2.maxi:HBM[0:7]\nsp=tg3.maxi:HBM[0:7]\nsp=tg4.maxi:HBM[0:7]\nsp=tg5.maxi:HBM[0:7]\nsp=tg6.maxi:HBM[0:7]\nsp=tg7.maxi:HBM[0:7]\nsp=tg8.maxi:HBM[8:15]\nsp=tg9.maxi:HBM[8:15]\nsp=tg10.maxi:HBM[8:15]\nsp=tg11.maxi:HBM[8:15]\nsp=tg12.maxi:HBM[8:15]\nsp=tg13.maxi:HBM[8:15]\nsp=tg14.maxi:HBM[8:15]\nsp=tg15.maxi:HBM[8:15]\nsp=tg16.maxi:HBM[16:23]\nsp=tg17.maxi:HBM[16:23]\nsp=tg18.maxi:HBM[16:23]\nsp=tg19.maxi:HBM[16:23]\nsp=tg20.maxi:HBM[16:23]\nsp=tg21.maxi:HBM[16:23]\nsp=tg22.maxi:HBM[16:23]\nsp=tg23.maxi:HBM[16:23]\nsp=tg24.maxi:HBM[24:31]\nsp=tg25.maxi:HBM[24:31]\nsp=tg26.maxi:HBM[24:31]\nsp=tg27.maxi:HBM[24:31]\nsp=tg28.maxi:HBM[24:31]\nsp=tg29.maxi:HBM[24:31]\nsp=tg30.maxi:HBM[24:31]\nsp=tg31.maxi:HBM[24:31]\nslr=tg0:SLR0\nslr=tg1:SLR0\nslr=tg2:SLR0\nslr=tg3:SLR0\nslr=tg4:SLR0\nslr=tg5:SLR0\nslr=tg6:SLR0\nslr=tg7:SLR0\nslr=tg8:SLR0\nslr=tg9:SLR0\nslr=tg10:SLR1\nslr=tg11:SLR1\nslr=tg12:SLR1\nslr=tg13:SLR1\nslr=tg14:SLR1\nslr=tg15:SLR1\nslr=tg16:SLR1\nslr=tg17:SLR1\nslr=tg18:SLR1\nslr=tg19:SLR1\nslr=tg20:SLR1\nslr=tg21:SLR2\nslr=tg22:SLR2\nslr=tg23:SLR2\nslr=tg24:SLR2\nslr=tg25:SLR2\nslr=tg26:SLR2\nslr=tg27:SLR2\nslr=tg28:SLR2\nslr=tg29:SLR2\nslr=tg30:SLR2\nslr=tg31:SLR2\n\n"
+   }
+  ],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:00 2023",
+ "timestampMillis": "1685748960617",
+ "status": {
+  "cmdId": "83d9792a-6dc1-40f4-bdfd-774326ec2161",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:30 2023",
+ "timestampMillis": "1685748990939",
+ "status": {
+  "cmdId": "83d9792a-6dc1-40f4-bdfd-774326ec2161",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jun  2 19:36:30 2023",
+ "timestampMillis": "1685748990958",
+ "buildStep": {
+  "cmdId": "c6497338-ef53-4260-8221-21ee0a8f44af",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/sdsl.dat -rtd /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/cf2sw.rtd -nofilter /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/cf2sw_full.rtd -xclbin /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.xml -o /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/sdsl.dat",
+   "-rtd",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.xml",
+   "-o",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:30 2023",
+ "timestampMillis": "1685748990959",
+ "status": {
+  "cmdId": "c6497338-ef53-4260-8221-21ee0a8f44af",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:45 2023",
+ "timestampMillis": "1685749005505",
+ "status": {
+  "cmdId": "c6497338-ef53-4260-8221-21ee0a8f44af",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jun  2 19:36:45 2023",
+ "timestampMillis": "1685749005521",
+ "buildStep": {
+  "cmdId": "952608c0-289d-4eb1-b3d7-21b1fb0726e1",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:45 2023",
+ "timestampMillis": "1685749005522",
+ "status": {
+  "cmdId": "952608c0-289d-4eb1-b3d7-21b1fb0726e1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jun  2 19:36:46 2023",
+ "timestampMillis": "1685749006986",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:46 2023",
+ "timestampMillis": "1685749006990",
+ "status": {
+  "cmdId": "952608c0-289d-4eb1-b3d7-21b1fb0726e1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jun  2 19:36:47 2023",
+ "timestampMillis": "1685749007008",
+ "buildStep": {
+  "cmdId": "b3ea16f8-b893-451a-9577-1d41c21cd96d",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f /work/shared/common/CAD_tool/xilinx/platforms//xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm --kernel_frequency 300 --remote_ip_cache /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/.ipcache -s --output_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int --log_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/logs/link --report_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link --config /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/vplConfig.ini -k /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link --no-info --iprepo /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xo/ip_repo/xilinx_com_hls_hbm_tg_1_0 --messageDb /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/run_link/vpl.pb /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "/work/shared/common/CAD_tool/xilinx/platforms//xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm",
+   "--kernel_frequency",
+   "300",
+   "--remote_ip_cache",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/.ipcache",
+   "-s",
+   "--output_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int",
+   "--log_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/logs/link",
+   "--report_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link",
+   "--config",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/vplConfig.ini",
+   "-k",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link",
+   "--no-info",
+   "--iprepo",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xo/ip_repo/xilinx_com_hls_hbm_tg_1_0",
+   "--messageDb",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/run_link/vpl.pb",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=compiler.vppCurrentWorkingDir=/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build\nmisc=BinaryName=grp8_all2all_32t32c.hw\n\n[connectivity]\nnk=hbm_tg:32:tg0.tg1.tg2.tg3.tg4.tg5.tg6.tg7.tg8.tg9.tg10.tg11.tg12.tg13.tg14.tg15.tg16.tg17.tg18.tg19.tg20.tg21.tg22.tg23.tg24.tg25.tg26.tg27.tg28.tg29.tg30.tg31\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\n\n"
+   }
+  ],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:47 2023",
+ "timestampMillis": "1685749007010",
+ "status": {
+  "cmdId": "b3ea16f8-b893-451a-9577-1d41c21cd96d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Jun  2 19:36:48 2023",
+ "timestampMillis": "1685749008555",
+ "buildStep": {
+  "cmdId": "d6916339-09cc-4b46-9a30-ce2e7813cbfa",
+  "name": "vpl",
+  "logFile": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/link.steps.log",
+  "commandLine": "/opt/xilinx/Xilinx_Vivado_vitis_2020.2/Vitis/2020.2/bin/unwrapped/lnx64.o/vpl -t hw -f /work/shared/common/CAD_tool/xilinx/platforms//xilinx_u280_xdma_201920_3/xilinx_u280_xdma_201920_3.xpfm --kernel_frequency 300 --remote_ip_cache /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/.ipcache -s --output_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int --log_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/logs/link --report_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link --config /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/vplConfig.ini -k /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link --no-info --iprepo /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xo/ip_repo/xilinx_com_hls_hbm_tg_1_0 --messageDb /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/run_link/vpl.pb /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:36:48 2023",
+ "timestampMillis": "1685749008556",
+ "status": {
+  "cmdId": "d6916339-09cc-4b46-9a30-ce2e7813cbfa",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Fri Jun  2 19:37:28 2023",
+ "timestampMillis": "1685749048272",
+ "vivadoProject": {
+  "openDir": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Jun  2 19:37:28 2023",
+ "timestampMillis": "1685749048277",
+ "buildStep": {
+  "cmdId": "27c9841c-481f-4a2e-98cf-a192f15d9526",
+  "name": "vivado",
+  "logFile": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Jun  2 19:37:28 2023",
+ "timestampMillis": "1685749048278",
+ "status": {
+  "cmdId": "27c9841c-481f-4a2e-98cf-a192f15d9526",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Jun  2 19:40:12 2023",
+ "timestampMillis": "1685749212612",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/debug_ip_layout.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "DEBUG_IP_LAYOUT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:28 2023",
+ "timestampMillis": "1685789728846",
+ "status": {
+  "cmdId": "27c9841c-481f-4a2e-98cf-a192f15d9526",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:31 2023",
+ "timestampMillis": "1685789731992",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:31 2023",
+ "timestampMillis": "1685789731997",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732002",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732006",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732011",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732015",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732020",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732024",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732036",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732041",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732045",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_slr_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732049",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_slr_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_ROUTED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732054",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_full_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732058",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_full_util_routed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732070",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_logic_reset_op_0_synth_1_pfm_dynamic_logic_reset_op_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732075",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_control_0_synth_1_pfm_dynamic_psreset_gate_pr_control_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732079",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_data_0_synth_1_pfm_dynamic_psreset_gate_pr_data_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732084",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_dataclk_0_synth_1_pfm_dynamic_psreset_gate_pr_dataclk_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732088",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel_0_synth_1_pfm_dynamic_psreset_gate_pr_kernel_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732093",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel2_0_synth_1_pfm_dynamic_psreset_gate_pr_kernel2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732098",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_util_and2_hbm_0_synth_1_pfm_dynamic_util_and2_hbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732102",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_axi_gpio_null_slr1_0_synth_1_pfm_dynamic_axi_gpio_null_slr1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732107",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_control_1_synth_1_pfm_dynamic_psreset_gate_pr_control_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732112",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_data_1_synth_1_pfm_dynamic_psreset_gate_pr_data_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732116",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_dataclk_1_synth_1_pfm_dynamic_psreset_gate_pr_dataclk_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732121",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel_1_synth_1_pfm_dynamic_psreset_gate_pr_kernel_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732150",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel2_1_synth_1_pfm_dynamic_psreset_gate_pr_kernel2_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732155",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_logic_reset_op_1_synth_1_pfm_dynamic_logic_reset_op_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732160",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_control_2_synth_1_pfm_dynamic_psreset_gate_pr_control_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732165",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_data_2_synth_1_pfm_dynamic_psreset_gate_pr_data_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732170",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_dataclk_2_synth_1_pfm_dynamic_psreset_gate_pr_dataclk_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732174",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel_2_synth_1_pfm_dynamic_psreset_gate_pr_kernel_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732179",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_axi_vip_ctrl_hbm_mgntpf_0_synth_1_pfm_dynamic_axi_vip_ctrl_hbm_mgntpf_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732183",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_axi_vip_ctrl_mgntpf_0_synth_1_pfm_dynamic_axi_vip_ctrl_mgntpf_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732188",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_axi_vip_data_0_synth_1_pfm_dynamic_axi_vip_data_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732193",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_axilite_user_input_reg_0_synth_1_pfm_dynamic_axilite_user_input_reg_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732197",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_debug_bridge_xsdbm_0_synth_1_pfm_dynamic_debug_bridge_xsdbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732202",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_hmss_0_0_synth_1_pfm_dynamic_hmss_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732206",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_regslice_pipe_ctrl_hbm_mgntpf_0_synth_1_pfm_dynamic_regslice_pipe_ctrl_hbm_mgntpf_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732211",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_xbar_2_synth_1_pfm_dynamic_xbar_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732216",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_m09_regslice_3_synth_1_pfm_dynamic_m09_regslice_3_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732220",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_auto_cc_8_synth_1_pfm_dynamic_auto_cc_8_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732225",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_s00_regslice_16_synth_1_pfm_dynamic_s00_regslice_16_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732230",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_m00_regslice_5_synth_1_pfm_dynamic_m00_regslice_5_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732237",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_xbar_5_synth_1_pfm_dynamic_xbar_5_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732241",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_psreset_gate_pr_kernel2_2_synth_1_pfm_dynamic_psreset_gate_pr_kernel2_2_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732263",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_freq_counter_0_0_synth_1_pfm_dynamic_freq_counter_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732308",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_tg12_0_synth_1_pfm_dynamic_tg12_0_utilization_synth.rpt",
+  "name": "hbm_tg",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732313",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_tg9_0_synth_1_pfm_dynamic_tg9_0_utilization_synth.rpt",
+  "name": "hbm_tg",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732325",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_tg21_0_synth_1_pfm_dynamic_tg21_0_utilization_synth.rpt",
+  "name": "hbm_tg",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732332",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_vip_S10_0_synth_1_bd_5dca_vip_S10_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732338",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_hbm_reset_sync_SLR2_0_synth_1_bd_5dca_hbm_reset_sync_SLR2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732342",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_hbm_inst_0_synth_1_bd_5dca_hbm_inst_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732347",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/pfm_dynamic_xbar_4_synth_1_pfm_dynamic_xbar_4_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732366",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_ebbe_xsdbm_0_synth_1_bd_ebbe_xsdbm_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732371",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_ebbe_lut_buffer_0_synth_1_bd_ebbe_lut_buffer_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732376",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_slice12_11_0_synth_1_bd_5dca_slice12_11_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732427",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_slice0_12_0_synth_1_bd_5dca_slice0_12_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732432",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_slice13_12_0_synth_1_bd_5dca_slice13_12_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732467",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_switch_2to1_12_0_synth_1_bd_5dca_switch_2to1_12_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732472",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_slice1_0_0_synth_1_bd_5dca_slice1_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732477",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect2_1_0_synth_1_bd_5dca_interconnect2_1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732525",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect3_2_0_synth_1_bd_5dca_interconnect3_2_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732553",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_slice31_30_0_synth_1_bd_5dca_slice31_30_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732593",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect32_31_0_synth_1_bd_5dca_interconnect32_31_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732641",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_init_reduce_0_synth_1_bd_5dca_init_reduce_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732668",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect19_18_0_synth_1_bd_5dca_interconnect19_18_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732707",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect31_30_0_synth_1_bd_5dca_interconnect31_30_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732712",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect18_17_0_synth_1_bd_5dca_interconnect18_17_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732717",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect26_25_0_synth_1_bd_5dca_interconnect26_25_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732764",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect20_19_0_synth_1_bd_5dca_interconnect20_19_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732769",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect12_11_0_synth_1_bd_5dca_interconnect12_11_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732784",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect25_24_0_synth_1_bd_5dca_interconnect25_24_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732833",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect24_23_0_synth_1_bd_5dca_interconnect24_23_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732838",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect11_10_0_synth_1_bd_5dca_interconnect11_10_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732857",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect10_9_0_synth_1_bd_5dca_interconnect10_9_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732862",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect9_8_0_synth_1_bd_5dca_interconnect9_8_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732915",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect8_7_0_synth_1_bd_5dca_interconnect8_7_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732938",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect7_6_0_synth_1_bd_5dca_interconnect7_6_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732991",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect6_5_0_synth_1_bd_5dca_interconnect6_5_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:32 2023",
+ "timestampMillis": "1685789732996",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect5_4_0_synth_1_bd_5dca_interconnect5_4_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733024",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect4_3_0_synth_1_bd_5dca_interconnect4_3_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733076",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect21_20_0_synth_1_bd_5dca_interconnect21_20_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733082",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_axi_apb_bridge_inst_0_synth_1_bd_5dca_axi_apb_bridge_inst_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733087",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_util_vector_logic_0_synth_1_bd_5dca_util_vector_logic_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733092",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect1_0_0_synth_1_bd_5dca_interconnect1_0_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733125",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect22_21_0_synth_1_bd_5dca_interconnect22_21_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733166",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect23_22_0_synth_1_bd_5dca_interconnect23_22_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733201",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect28_27_0_synth_1_bd_5dca_interconnect28_27_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733206",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect15_14_0_synth_1_bd_5dca_interconnect15_14_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733212",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect17_16_0_synth_1_bd_5dca_interconnect17_16_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733217",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect30_29_0_synth_1_bd_5dca_interconnect30_29_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733222",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect16_15_0_synth_1_bd_5dca_interconnect16_15_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733226",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect29_28_0_synth_1_bd_5dca_interconnect29_28_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733231",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect14_13_0_synth_1_bd_5dca_interconnect14_13_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733236",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/syn/bd_5dca_interconnect27_26_0_synth_1_bd_5dca_interconnect27_26_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733286",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_xilinx_u280_xdma_201920_3_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733535",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/imp/impl_1_xilinx_u280_xdma_201920_3_bb_locked_timing_summary_routed.rpx",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733616",
+ "status": {
+  "cmdId": "d6916339-09cc-4b46-9a30-ce2e7813cbfa",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733690",
+ "status": {
+  "cmdId": "b3ea16f8-b893-451a-9577-1d41c21cd96d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733793",
+ "buildStep": {
+  "cmdId": "eda891a4-7a7f-439f-a3c5-14c61d22c67e",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733795",
+ "status": {
+  "cmdId": "eda891a4-7a7f-439f-a3c5-14c61d22c67e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733875",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733886",
+ "buildStep": {
+  "cmdId": "39a633d5-c6ec-4467-be10-8198a917618d",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/address_map.xml -sdsl /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/sdsl.dat -xclbin /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.xml -rtd /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.rtd -o /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.xml",
+  "args": [
+   "-a",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/address_map.xml",
+   "-sdsl",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/sdsl.dat",
+   "-xclbin",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.rtd",
+   "-o",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:33 2023",
+ "timestampMillis": "1685789733887",
+ "status": {
+  "cmdId": "39a633d5-c6ec-4467-be10-8198a917618d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748026",
+ "status": {
+  "cmdId": "39a633d5-c6ec-4467-be10-8198a917618d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748051",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748051",
+ "buildStep": {
+  "cmdId": "e621fbbe-6616-4ed5-908d-732a6be0b16f",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.rtd",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748052",
+ "status": {
+  "cmdId": "e621fbbe-6616-4ed5-908d-732a6be0b16f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748057",
+ "status": {
+  "cmdId": "e621fbbe-6616-4ed5-908d-732a6be0b16f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748059",
+ "status": {
+  "cmdId": "eda891a4-7a7f-439f-a3c5-14c61d22c67e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748074",
+ "buildStep": {
+  "cmdId": "70fac466-d2d8-4a1b-88d4-ce7b2cce24f1",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.rtd --append-section :JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw_xml.rtd --add-section BUILD_METADATA:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw_build.rtd --add-section EMBEDDED_METADATA:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.xml --add-section SYSTEM_METADATA:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/systemDiagramModelSlrBaseAddress.json --output /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.rtd",
+   "--append-section",
+   ":JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/grp8_all2all_32t32c.hw.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--output",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748075",
+ "status": {
+  "cmdId": "70fac466-d2d8-4a1b-88d4-ce7b2cce24f1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748610",
+ "status": {
+  "cmdId": "70fac466-d2d8-4a1b-88d4-ce7b2cce24f1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748620",
+ "buildStep": {
+  "cmdId": "927fc8cd-bc73-43c0-b2c0-940ce6c2650d",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin.info --input /work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin.info",
+   "--input",
+   "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/../output/grp8_all2all_32t32c.hw.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:48 2023",
+ "timestampMillis": "1685789748621",
+ "status": {
+  "cmdId": "927fc8cd-bc73-43c0-b2c0-940ce6c2650d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749301",
+ "status": {
+  "cmdId": "927fc8cd-bc73-43c0-b2c0-940ce6c2650d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749310",
+ "buildStep": {
+  "cmdId": "dde4149e-f168-4c89-aec7-8a23f13698c9",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749311",
+ "status": {
+  "cmdId": "dde4149e-f168-4c89-aec7-8a23f13698c9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749315",
+ "status": {
+  "cmdId": "dde4149e-f168-4c89-aec7-8a23f13698c9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749520",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/system_estimate_grp8_all2all_32t32c.hw.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749586",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/output/link/v++_link_grp8_all2all_32t32c.hw_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749587",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/link_hw/v++_link_grp8_all2all_32t32c.hw_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749605",
+ "report": {
+  "path": "/work/shared/common/project_build/hbm_ubmark/grp8_all2all_32t32c/build/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sat Jun  3 06:55:49 2023",
+ "timestampMillis": "1685789749610",
+ "status": {
+  "cmdId": "73df4a82-191e-48bc-b67a-acf9c9c1fd0f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
