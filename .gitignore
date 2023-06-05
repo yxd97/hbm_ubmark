@@ -32,3 +32,6 @@ Makefile
 *.pb
 *.html
 *.ltx
+
+# ignore full timing reports as they are too large
+*_timing_summary*
