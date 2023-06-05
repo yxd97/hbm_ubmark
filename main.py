@@ -5,6 +5,7 @@ from typing import List,Tuple
 
 from utils import syscfg_utils
 from utils import makefile_utils
+from utils.logging_utils import *
 
 CONNECTIVITIES = [
     'all2all',
@@ -16,18 +17,7 @@ CONNECTIVITIES = [
 
 ABS_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-def pinfo(*args, **kwargs):
-    print("[INFO] ", *args, **kwargs, file=sys.stdout)
 
-def pwarning(*args, **kwargs):
-    print("[WARNING] ", *args, **kwargs, file=sys.stdout)
-
-def perror(*args, **kwargs):
-    print("[ERROR] ", *args, **kwargs, file=sys.stderr)
-
-def echo_chdir(dir:str):
-    pinfo(f'changing to directory {dir}')
-    os.chdir(dir)
 
 class TestCase:
     def __init__(self, connectivity:str, ntg:int, nch:int):

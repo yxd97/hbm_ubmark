@@ -1,6 +1,7 @@
 from typing import List,Tuple, Dict
 import os
 from dataclasses import dataclass
+from logging_utils import *
 
 def check_design_status(output_dir:str) -> str:
     finished_runs = []
@@ -16,16 +17,31 @@ def check_design_status(output_dir:str) -> str:
         return 'synthed'
     return 'not_implemented'
 
-def gen_tcl_open_project(project_root:str, project_status:str) -> Dict[str, str]:
-    timing_report_file = 'timing.rpt'
-    if project_status in ['synthed', 'not_implemented']:
+def gen_tcl_collect_results(project_root:str, build_dir:str, output_dir:str) -> Dict[str, str]:
+    reports = {}
+    project_status = check_design_status(output_dir)
+    if project_status ==  'not_implemented':
         raise ValueError(f"Project is in status '{project_status}', implementation results are not available.")
+    if project_status == 'synthed':
+        pwarning(f"Project is in status '{project_status}', timing results are not available, utilization results are not accurate.")
+        reports['full_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_full_util_synthed.rpt'))
+        reports['kernel_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_kernel_util_synthed.rpt'))
+        reports['static_region_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_static_region_util_synthed.rpt'))
+    if project_status == 'placed':
+        pwarning(f"Project is in status '{project_status}', timing results are not available.")
+        reports['full_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_full_util_placed.rpt'))
+        reports['kernel_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_kernel_util_placed.rpt'))
+    if project_status == 'routed':
+        reports['full_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_full_util_routed.rpt'))
+        reports['kernel_util'] = os.path.abspath(os.path.join(output_dir, 'link/imp/impl_1_kernel_util_routed.rpt'))
+        reports['timing'] = os.path.abspath(os.path.join(output_dir, 'imp/timing.rpt'))
     with open(os.path.join(project_root, 'report_results.tcl'), 'w', newline='') as f:
         # open implemented design
         f.write("open_project prj.xpr\n")
         f.write("open_runs impl_1\n")
         # report timing
-        f.write(" report_timing_summary -no_detailed_paths -setup -hold -unique_pins -no_header -file timig.rpt\n")
+        f.write(f"report_timing_summary -no_detailed_paths -setup -hold -unique_pins -no_header -file {timing_report_file}\n")
+    return reports
 
 def gen_tcl_report_utilization(self):
     pinfo(f'Reporting utilization for {self.name} ')
