@@ -23,3 +23,12 @@ Makefile
 # log files
 *.log
 *.jou
+
+# out-of-context synthesis reports
+# there are too many, hence ignored
+*/output/link/syn
+
+# only save text report files
+*.pb
+*.html
+*.ltx
