@@ -19,16 +19,24 @@ system.cfg
 emconfig.json
 host.cpp
 Makefile
+*output
 
 # log files
 *.log
 *.jou
 
-# out-of-context synthesis reports
-# there are too many, hence ignored
-*/output/link/syn
-
-# only save text report files
-*.pb
-*.html
-*.ltx
+# include some report files
+!*output/link/imp/full_util_synthed.rpt
+!*output/link/imp/full_util_placed.rpt
+!*output/link/imp/full_util_routed.rpt
+!*output/link/imp/kernel_util_synthed.rpt
+!*output/link/imp/kernel_util_placed.rpt
+!*output/link/imp/kernel_util_routed.rpt
+!*output/link/imp/sr_util_synthed.rpt
+!*output/link/imp/sr_util_placed.rpt
+!*output/link/imp/sr_util_routed.rpt
+!*output/link/imp/hmss_util_synthed.rpt
+!*output/link/imp/hmss_util_placed.rpt
+!*output/link/imp/hmss_util_routed.rpt
+!*output/link/imp/timing_routed.rpt
+!*output/link/imp/util_summary.csv

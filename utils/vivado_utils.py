@@ -1,7 +1,9 @@
 from typing import List,Tuple, Dict
 import os
 from dataclasses import dataclass
-from logging_utils import *
+import sys
+sys.path.append('.')
+from logging_utils import pwarning
 
 def check_design_status(output_dir:str) -> str:
     finished_runs = []
