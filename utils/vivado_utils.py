@@ -37,6 +37,7 @@ def collect_reports(abs_root:str, build_dir:str, output_dir:str) -> Dict[str, st
     # check if the design has been implemented
     if project_status ==  'not_implemented':
         raise ValueError(f"Project is in status '{project_status}', implementation results are not available.")
+
     # define report files
     if project_status == 'synthed':
         pwarning(f"Project is in status '{project_status}', timing results are not available, utilization results are not accurate.")
@@ -56,6 +57,7 @@ def collect_reports(abs_root:str, build_dir:str, output_dir:str) -> Dict[str, st
         reports['static_region_util'] = os.path.abspath(os.path.join(output_dir, 'link/report/sr_util_routed.rpt'))
         reports['hmss_util'] = os.path.abspath(os.path.join(output_dir, 'link/report/hmss_util_routed.rpt'))
         reports['timing'] = os.path.abspath(os.path.join(output_dir, 'link/report/timing.rpt'))
+
     # copy existing reports to be tracked by git
     os.makedirs(os.path.join(output_dir, 'link/report'), exist_ok=True)
     for rpt in ['full_util', 'kernel_util']:
@@ -64,28 +66,37 @@ def collect_reports(abs_root:str, build_dir:str, output_dir:str) -> Dict[str, st
         src = "impl_1_" + src
         src = os.path.abspath(os.path.join(output_dir, 'link/imp', src))
         os.system(f'cp {src} {dest}')
-    # generate other reports
-    vpl_dir = os.path.join(build_dir, 'link_hw/link/vivado/vpl/prj')
-    with open(os.path.join(vpl_dir, 'report_results.tcl'), 'w', newline='') as f:
-        # open implemented design
-        f.write("open_project prj.xpr\n")
-        if project_status == 'synthed':
-            f.write("open_run my_rm_synth_1\n")
-        else:
-            f.write("open_run impl_1\n")
-        # report timing
-        if project_status != 'synthed':
-            f.write(f"report_timing_summary -no_detailed_paths -setup -hold -unique_pins -no_header -file {reports['timing']}\n")
-        # report utilization
-        f.write(f"report_utilization -file {reports['static_region_util']} -hierarchical -hierarchical_percentages -hierarchical_depth 2\n")
-        f.write(f"report_utilization -file {reports['hmss_util']} -cells [get_cells -hierarchical -regexp .*hmss_0] -hierarchical -hierarchical_percentages -hierarchical_depth 1\n")
-    echo_chdir(vpl_dir)
-    err = os.system('vivado -mode batch -source report_results.tcl')
-    if err != 0:
-        raise RuntimeError(f"Vivado returned error code {err} when generating reports.")
-    echo_chdir(abs_root)
+
+    # generate other reports (if not exist)
+    report_available = {k: os.path.exists(v) for k,v in reports.items()}
+    if not all(report_available.values()):
+        vpl_dir = os.path.join(build_dir, 'link_hw/link/vivado/vpl/prj')
+        # create vivado script
+        with open(os.path.join(vpl_dir, 'report_results.tcl'), 'w', newline='') as f:
+            # open implemented design
+            f.write("open_project prj.xpr\n")
+            if project_status == 'synthed':
+                f.write("open_run my_rm_synth_1\n")
+            else:
+                f.write("open_run impl_1\n")
+            # report timing
+            if project_status != 'synthed' and not report_available['timing']:
+                f.write(f"report_timing_summary -no_detailed_paths -setup -hold -unique_pins -no_header -file {reports['timing']}\n")
+            # report utilization
+            if not report_available['static_region_util']:
+                f.write(f"report_utilization -file {reports['static_region_util']} -hierarchical -hierarchical_percentages -hierarchical_depth 2\n")
+            if not report_available['hmss_util']:
+                f.write(f"report_utilization -file {reports['hmss_util']} -cells [get_cells -hierarchical -regexp .*hmss_0] -hierarchical -hierarchical_percentages -hierarchical_depth 1\n")
+        # run vivado to generate reports
+        echo_chdir(vpl_dir)
+        err = os.system('vivado -mode batch -source report_results.tcl')
+        if err != 0:
+            raise RuntimeError(f"Vivado returned error code {err} when generating reports.")
+        echo_chdir(abs_root)
     for k, v in reports.items():
-        if os.path.exists(v):
+        if report_available[k]:
+            pinfo(f"Report {k} already exists: {v}.")
+        elif os.path.exists(v):
             pinfo(f"Successfully generated report for {k}: {v}.")
         else:
             perror(f"Failed to generate report for {k}: {v}.")
@@ -192,7 +203,7 @@ def get_timing_results(report_file:str) -> TimingResult:
         fields = line.split(' ')
         name = fields[0]
         if len(fields) != 13:
-            pwarning(f"Ignoring constraint-free clock {name}.")
+            # pwarning(f"Ignoring constraint-free clock {name}.")
             continue
         if name == 'clk_out1_pfm_top_clkwiz_hbm_aclk_0':
             result.hbm_clk.wns = float(fields[1])
@@ -434,9 +445,9 @@ if __name__ == '__main__':
     summary_file = 'test.csv'
     with open(summary_file, 'w', newline='') as f:
         f.write(f"Design, HBM Timing, Kernel Timing, LUT, FF, BRAM, URAM, DSP\n")
-        f.write(f"test, {hbm_timing}, {kernel_timing}, , , , , , \n")
+        f.write(f"test, {hbm_timing}, {kernel_timing}, , , , , \n")
         f.write(f", Total, ,{util_breakdown.total.export_csv()}\n")
-        f.write(f", Breakdown, , , , , , , \n")
+        f.write(f", Breakdown, , , , , , \n")
         f.write(f", , TGs, {util_breakdown.breakdown['kernels'].export_csv()}\n")
         f.write(f", , HMSS, {util_breakdown.breakdown['hmss'].export_csv()}\n")
         f.write(f", , Static Region, {util_breakdown.breakdown['static_region'].export_csv()}\n")

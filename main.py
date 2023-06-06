@@ -184,9 +184,9 @@ def main():
                 kernel_timing = f'{timing_results.kernel_clk.frequency} MHz'
                 util_breakdown:vivado_utils.UtilizationBreakdown = vivado_utils.get_utilization_breakdown(reports)
                 with open(summary_file, 'a', newline='') as f:
-                    f.write(f"{tc.name}, {hbm_timing}, {kernel_timing}, , , , , , \n")
+                    f.write(f"{tc.name}, {hbm_timing}, {kernel_timing}, , , , , \n")
                     f.write(f", Total, ,{util_breakdown.total.export_csv()}\n")
-                    f.write(f", Breakdown, , , , , , , \n")
+                    f.write(f", Breakdown, , , , , , \n")
                     f.write(f", , TGs, {util_breakdown.breakdown['kernels'].export_csv()}\n")
                     f.write(f", , HMSS, {util_breakdown.breakdown['hmss'].export_csv()}\n")
                     f.write(f", , Static Region, {util_breakdown.breakdown['static_region'].export_csv()}\n")
