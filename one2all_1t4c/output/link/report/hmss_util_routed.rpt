@@ -1,0 +1,30 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+| Date         : Tue Jun  6 16:05:25 2023
+| Host         : zhang-24.ece.cornell.edu running 64-bit unknown
+| Command      : report_utilization -file /work/shared/common/project_build/hbm_ubmark/one2all_1t4c/output/link/report/hmss_util_routed.rpt -cells [get_cells -hierarchical -regexp .*hmss_0] -hierarchical -hierarchical_percentages -hierarchical_depth 1
+| Design       : pfm_top_wrapper
+| Device       : xcu280fsvh2892-2L
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------+----------------------+----------------+--------------+-------------+-------------+-------------+-------------+--------------+----------+----------+----------+------------+
+| Instance |        Module        |  PR Attribute  | Total PPLOCs |  Total LUTs |  Logic LUTs |   LUTRAMs   |     SRLs    |      FFs     |  RAMB36  |  RAMB18  |   URAM   | DSP Blocks |
++----------+----------------------+----------------+--------------+-------------+-------------+-------------+-------------+--------------+----------+----------+----------+------------+
+| hmss_0   | pfm_dynamic_hmss_0_0 |                |            - | 7088(0.54%) | 4325(0.33%) | 1464(0.24%) | 1299(0.22%) | 15886(0.61%) | 2(0.10%) | 0(0.00%) | 0(0.00%) |   0(0.00%) |
+|   hmss_0 | pfm_dynamic_hmss_0_0 | Reconfigurable |            - | 7088(0.61%) | 4325(0.37%) | 1464(0.28%) | 1299(0.24%) | 15886(0.68%) | 2(0.11%) | 0(0.00%) | 0(0.00%) |   0(0.00%) |
++----------+----------------------+----------------+--------------+-------------+-------------+-------------+-------------+--------------+----------+----------+----------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining.
+  The percentages are calculated based on static or reconfigurable regions where the instances belong
+
+

@@ -2,10 +2,11 @@ import os
 import sys
 import argparse
 from typing import List,Tuple
+from datetime import datetime
 
 from utils import syscfg_utils
 from utils import makefile_utils
-from utils.logging_utils import *
+from utils import vivado_utils
 
 CONNECTIVITIES = [
     'all2all',
@@ -17,7 +18,18 @@ CONNECTIVITIES = [
 
 ABS_ROOT = os.path.abspath(os.path.dirname(__file__))
 
+def pinfo(*args, **kwargs):
+    print("[INFO] ", *args, **kwargs, file=sys.stdout)
 
+def pwarning(*args, **kwargs):
+    print("[WARNING] ", *args, **kwargs, file=sys.stdout)
+
+def perror(*args, **kwargs):
+    print("[ERROR] ", *args, **kwargs, file=sys.stderr)
+
+def echo_chdir(dir:str):
+    pinfo(f'changing to directory {dir}')
+    os.chdir(dir)
 
 class TestCase:
     def __init__(self, connectivity:str, ntg:int, nch:int):
@@ -142,15 +154,46 @@ def main():
     parser = argparse.ArgumentParser(description='Test case generator')
     parser.add_argument(
         'option', type=str,
-        choices=['setup', 'build', 'run', 'clean', 'cleanall', 'delete'],
+        choices=['setup', 'build', 'run', 'collect' ,'clean', 'cleanall', 'delete'],
         help = "setup: create build files; "
                "build: build the test case; "
                "run: run the test case; "
+               "collect: collect and summarize the results on all test cases, regardless of work distribution; "
                "clean: clean the logs; "
                "cleanall: clean the logs and build temp files; "
                "delete: delete the test cases' outputs; "
     )
     args = parser.parse_args()
+
+    if args.option == 'collect':
+        all_test_cases:List[TestCase] = []
+        for tcs in WORK_DISTRIBUTION.values():
+            all_test_cases.extend(tcs)
+        pinfo(f'Collecting reports from {len(all_test_cases)} test cases: ')
+        for tc in all_test_cases:
+            print(" ", tc.name)
+        curr_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+        summary_file = os.path.join(ABS_ROOT, f'summary_{curr_datetime}.csv')
+        with open(summary_file, 'a', newline='') as f:
+            f.write(f"Design, HBM Timing, Kernel Timing, LUT, FF, BRAM, URAM, DSP\n")
+        for tc in all_test_cases:
+            try:
+                reports = vivado_utils.collect_reports(ABS_ROOT, tc.build_dir, tc.output_dir)
+                timing_results:vivado_utils.TimingResult = vivado_utils.get_timing_results(reports['timing'])
+                hbm_timing = f'{timing_results.hbm_clk.frequency} MHz'
+                kernel_timing = f'{timing_results.kernel_clk.frequency} MHz'
+                util_breakdown:vivado_utils.UtilizationBreakdown = vivado_utils.get_utilization_breakdown(reports)
+                with open(summary_file, 'a', newline='') as f:
+                    f.write(f"{tc.name}, {hbm_timing}, {kernel_timing}, , , , , , \n")
+                    f.write(f", Total, ,{util_breakdown.total.export_csv()}\n")
+                    f.write(f", Breakdown, , , , , , , \n")
+                    f.write(f", , TGs, {util_breakdown.breakdown['kernels'].export_csv()}\n")
+                    f.write(f", , HMSS, {util_breakdown.breakdown['hmss'].export_csv()}\n")
+                    f.write(f", , Static Region, {util_breakdown.breakdown['static_region'].export_csv()}\n")
+                    f.write(f", , Others, {util_breakdown.breakdown['others'].export_csv()}\n")
+            except Exception as e:
+                perror(f'Failed to collect reports for {tc.name} with exception: {e}')
+        return
 
     hostname = get_hostname()
     if hostname not in WORK_DISTRIBUTION:
