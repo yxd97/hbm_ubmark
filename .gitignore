@@ -10,6 +10,7 @@ __pycache__
 # build directories
 build*
 .Xil
+hbm_ip_only/design_1
 
 # runtime cache
 .run
@@ -19,6 +20,8 @@ system.cfg
 emconfig.json
 host.cpp
 Makefile
+*/output/*
+!*/output/link/report/
 
 # log files
 *.log
