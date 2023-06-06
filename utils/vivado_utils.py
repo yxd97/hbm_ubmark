@@ -114,11 +114,13 @@ class ClockTiming:
         if self.wns < 0 and self.whs < 0:
             self.status = 'setup! hold!'
         elif self.wns < 0:
-            self.status = f'setup! ({self.frequency} MHz)'
+            period_ns = 1e3 / self.frequency
+            self.frequency = 1e3 / (period_ns - self.wns)
+            self.status = f'setup! ({self.frequency:.0f} MHz)'
         elif self.whs < 0:
             self.status = 'hold!'
         else:
-            self.status = f'met ({self.frequency} MHz)'
+            self.status = f'met ({self.frequency:.0f} MHz)'
 
     def print_results(self, name):
         print(f"{name} {self.frequency} MHz {self.status}, WNS: {self.wns} ns, WHS: {self.whs} ns")
