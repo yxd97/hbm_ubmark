@@ -20,8 +20,10 @@ system.cfg
 emconfig.json
 host.cpp
 Makefile
-*/output/*
-!*/output/link/report/
+**/output/link/imp
+**/output/link/syn
+*.xclbin
+*hw_guidance.html
 
 # log files
 *.log
