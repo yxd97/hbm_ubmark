@@ -175,22 +175,30 @@ def main():
         curr_datetime = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         summary_file = os.path.join(ABS_ROOT, f'summary_{curr_datetime}.csv')
         with open(summary_file, 'a', newline='') as f:
-            f.write(f"Design, HBM Timing, Kernel Timing, LUT, FF, BRAM, URAM, DSP\n")
+            f.write(f"Design, HBM Clock, Kernel Clock, Other Timing Violations, LUT, FF, BRAM, URAM, DSP\n")
         for tc in all_test_cases:
             try:
                 reports = vivado_utils.collect_reports(ABS_ROOT, tc.build_dir, tc.output_dir)
                 timing_results:vivado_utils.TimingResult = vivado_utils.get_timing_results(reports['timing'])
-                hbm_timing = f'{timing_results.hbm_clk.frequency} MHz'
-                kernel_timing = f'{timing_results.kernel_clk.frequency} MHz'
+                hbm_timing = {timing_results.hbm_clk.status}
+                kernel_timing = {timing_results.kernel_clk.status}
+                other_violations = ''
+                for name, clk in timing_results.other_clks.items():
+                    if not clk.status.startswith('met'):
+                        clk.print_results(name)
+                        other_violations += f'[{name} {clk.status}] '
+
+                with open(summary_file, 'a', newline='') as f:
+                    f.write(f"{tc.name}, {hbm_timing}, {kernel_timing}, {other_violations},,,,,,\n")
+
                 util_breakdown:vivado_utils.UtilizationBreakdown = vivado_utils.get_utilization_breakdown(reports)
                 with open(summary_file, 'a', newline='') as f:
-                    f.write(f"{tc.name}, {hbm_timing}, {kernel_timing}, , , , , \n")
-                    f.write(f", Total, ,{util_breakdown.total.export_csv()}\n")
-                    f.write(f", Breakdown, , , , , , \n")
-                    f.write(f", , TGs, {util_breakdown.breakdown['kernels'].export_csv()}\n")
-                    f.write(f", , HMSS, {util_breakdown.breakdown['hmss'].export_csv()}\n")
-                    f.write(f", , Static Region, {util_breakdown.breakdown['static_region'].export_csv()}\n")
-                    f.write(f", , Others, {util_breakdown.breakdown['others'].export_csv()}\n")
+                    f.write(f",,Total,,{util_breakdown.total.export_csv()}\n")
+                    f.write(f",,Breakdown,,,,,,\n")
+                    f.write(f",,,TGs, {util_breakdown.breakdown['kernels'].export_csv()}\n")
+                    f.write(f",,,HMSS, {util_breakdown.breakdown['hmss'].export_csv()}\n")
+                    f.write(f",,,Static Region, {util_breakdown.breakdown['static_region'].export_csv()}\n")
+                    f.write(f",,,Others, {util_breakdown.breakdown['others'].export_csv()}\n")
             except Exception as e:
                 perror(f'Failed to collect reports for {tc.name} with exception: {e}')
         return

@@ -112,13 +112,17 @@ class ClockTiming:
 
     def update_status(self):
         if self.wns < 0 and self.whs < 0:
-            self.status = 'setup & hold violation'
+            self.status = 'setup! hold!'
         elif self.wns < 0:
-            self.status = 'setup violation'
+            self.status = f'setup! ({self.frequency} MHz)'
         elif self.whs < 0:
-            self.status = 'hold violation'
+            self.status = 'hold!'
         else:
-            self.status = 'met'
+            self.status = f'met ({self.frequency} MHz)'
+
+    def print_results(self, name):
+        print(f"{name} {self.frequency} MHz {self.status}, WNS: {self.wns} ns, WHS: {self.whs} ns")
+
 
 class TimingResult:
     def __init__(self) -> None:
@@ -128,12 +132,12 @@ class TimingResult:
         self.other_clks:Dict[str: ClockTiming] = {}
 
     def print_results(self):
-        print(f"HBM clock {self.hbm_clk.frequency} MHz: {self.hbm_clk.status}, WNS: {self.hbm_clk.wns} ns, WHS: {self.hbm_clk.whs} ns")
-        print(f"Kernel clock {self.kernel_clk.frequency} MHz: {self.kernel_clk.status}, WNS: {self.kernel_clk.wns} ns, WHS: {self.kernel_clk.whs} ns")
-        print(f"Kernel clock2 {self.kernel_clk2.frequency} MHz: {self.kernel_clk2.status}, WNS: {self.kernel_clk2.wns} ns, WHS: {self.kernel_clk2.whs} ns")
+        self.hbm_clk.print_results('HBM clock')
+        self.kernel_clk.print_results('Kernel clock')
+        self.kernel_clk2.print_results('Kernel clock2')
         print("Other clocks:")
         for k, v in self.other_clks.items():
-            print(f"{k} {v.frequency} MHz: {v.status}, WNS: {v.wns} ns, WHS: {v.whs} ns")
+            v.print_results(k)
 
 def read_clock_level(line:str, nspaces:int = 2) -> int:
     indent = 0
@@ -187,7 +191,7 @@ def get_timing_results(report_file:str) -> TimingResult:
             result.kernel_clk2.level = clk_level
             result.kernel_clk2.frequency = float(fields[4])
         else:
-            clk = ClockTiming(clk_level, '', float(fields[4]), 0, 0)
+            clk = ClockTiming(clk_level, 'NA', float(fields[4]), 0, 0)
             result.other_clks[name] = clk
         i += 1
 
@@ -222,6 +226,11 @@ def get_timing_results(report_file:str) -> TimingResult:
             result.other_clks[name].whs = float(fields[5])
             result.other_clks[name].update_status()
         i += 1
+    # clean up clocks that are not in the intra clock table
+    other_clocks_clean = {
+        k: v for k, v in result.other_clks.items() if v.status != 'NA'
+    }
+    result.other_clks = other_clocks_clean
     return result
 
 @dataclass
