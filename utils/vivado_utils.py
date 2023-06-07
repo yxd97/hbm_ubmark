@@ -381,25 +381,29 @@ def parse_hier_util_table_line(
     results.breakdown[result_key].dsp = (dsp, dsp / avail_on_device.dsp[0])
 
 
-def get_utilization_breakdown(report_files:Dict[str, str]) -> UtilizationBreakdown:
-    results = UtilizationBreakdown()
-    # read full util report
-    available_on_device = Utilization((0, 1), (0, 1), (0, 1), (0, 1), (0, 1))
+def read_full_util_report(report:str, avail_on_device:Utilization, results:UtilizationBreakdown):
     lines = []
-    with open(report_files['full_util'], 'r') as f:
+    with open(report, 'r') as f:
         lines = f.readlines()
     ptr = 31 # get rid of the table of contents
     # find CLB Logic Table to get LUT and FF metrics
     ptr = locate_table(lines, '1. CLB Logic', ptr)
-    parse_total_util_table_line(ptr, lines, ['CLB LUTs', 'CLB Registers'], available_on_device, results)
+    parse_total_util_table_line(ptr, lines, ['CLB LUTs', 'CLB Registers'], avail_on_device, results)
     # find BLOCKRAM table to get BRAM and URAM metrics
     ptr = locate_table(lines, '3. BLOCKRAM', ptr)
-    parse_total_util_table_line(ptr, lines, ['Block RAM Tile', 'URAM'], available_on_device, results)
-    # find ARITHMETIC table to get DSP metrics
-    ptr = locate_table(lines, '4. ARITHMETIC', ptr)
-    parse_total_util_table_line(ptr, lines, ['DSPs'], available_on_device, results)
+    parse_total_util_table_line(ptr, lines, ['Block RAM Tile', 'URAM'], avail_on_device, results)
+    # find DSP table to get DSP metrics
+    ptr = locate_table(lines, '4. DSPs', ptr)
+    parse_total_util_table_line(ptr, lines, ['DSPs'], avail_on_device, results)
+
+def get_utilization_breakdown(report_files:Dict[str, str]) -> UtilizationBreakdown:
+    results = UtilizationBreakdown()
+    # read full util report
+    available_on_device = Utilization((0, 1), (0, 1), (0, 1), (0, 1), (0, 1))
+    read_full_util_report(report_files['full_util'], available_on_device, results)
 
     # read kernels report
+    lines = []
     with open(report_files['kernel_util'], 'r') as f:
         lines = f.readlines()
     ptr = 17 # get rid of the table of contents

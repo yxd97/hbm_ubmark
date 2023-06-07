@@ -3,6 +3,7 @@ import sys
 import argparse
 from typing import List,Tuple
 from datetime import datetime
+import traceback
 
 from utils import syscfg_utils
 from utils import makefile_utils
@@ -227,6 +228,7 @@ def main():
                 test_case.delete_all()
         except Exception as e:
             perror(f'Failed to execute "{args.option}" on test case {test_case.name} with exception: {e}')
+            traceback.print_exc()
 
 if __name__ == '__main__':
     main()
