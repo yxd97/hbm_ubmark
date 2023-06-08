@@ -70,23 +70,32 @@ def gen_tcl_config_hbmip_bd_cell(
 def gen_tcl_config_axiintercon_bd_cell(
     saxi_enabled:List[int], indent:int = 1
 ) -> List[str]:
-    indentation = '\t' * indent
+    indentation = '    ' * indent
     return [indentation + f'set_property -dict [list CONFIG.NUM_MI {len(saxi_enabled) + 1}] $axi_mem_intercon\n']
 
-def gen_tcl_connect_reset(
+def gen_tcl_connect_clkrst(
     saxi_enabled:List[int], indent:int = 1
 ) -> List[str]:
-    indentation = '\t' * indent
+    tcl = []
+    indentation = '    ' * indent
     cmd = 'connect_bd_net -net resetn_1 [get_bd_ports resetn] [get_bd_pins hbm_0/APB_0_PRESET_N]'
     for saxi in saxi_enabled:
         cmd += f' [get_bd_pins hbm_0/AXI_{saxi:02d}_ARESET_N]'
     cmd += ' [get_bd_pins resetn_inv_0/Op1]'
-    return [indentation + cmd + '\n']
+    tcl.append(indentation + cmd + '\n')
+    cmd = 'connect_bd_net -net clk_wiz_clk_out1 [get_bd_pins clk_wiz/clk_out1]'
+    cmd += ' [get_bd_pins axi_apb_bridge_0/s_axi_aclk] [get_bd_pins hbm_0/APB_0_PCLK] [get_bd_pins hbm_0/HBM_REF_CLK_0] [get_bd_pins rst_clk_wiz_100M/slowest_sync_clk]'
+    cmd += ' [get_bd_pins axi_mem_intercon/M00_ACLK]'
+    for i in range(len(saxi_enabled)):
+        cmd += f' [get_bd_pins axi_mem_intercon/M{(i+1):02d}_ACLK]'
+        cmd += f' [get_bd_pins hbm_0/AXI_{saxi_enabled[i]:02d}_ACLK]'
+    tcl.append(indentation + cmd + '\n')
+    return tcl
 
 def gen_tcl_connect_hbm(
     saxi_enabled:List[int], indent:int = 1
 ) -> List[str]:
-    indentation = '\t' * indent
+    indentation = '    ' * indent
     tcl = []
     for saxi in saxi_enabled:
         from_port = f'axi_mem_intercon/M{(saxi + 1):02d}_AXI'
@@ -103,24 +112,25 @@ def hex_addr(addr:int, hex_digits:int = 8) -> str:
 def gen_tcl_addr_map(
     mc_enabled:List[int], saxi_enabled:List[int], indent:int = 1
 ) -> List[str]:
-    total_size = len(mc_enabled) * 512 * 1024 * 1024
-    segment_size = total_size // len(saxi_enabled)
-    last_segment_size = total_size - segment_size * (len(saxi_enabled) - 1)
     mc_list = sorted(mc_enabled)
     pc_list = []
     for mc in mc_list:
         pc_list += [mc * 2, mc * 2 + 1]
+    pc_size = 256 * 1024 * 1024 # 256 MB per channel
+    segment_size = pc_size // len(saxi_enabled)
+    last_segment_size = pc_size - segment_size * (len(saxi_enabled) - 1)
     saxi_list = sorted(saxi_enabled)
     command = 'assign_bd_address -offset {offset} -range {range} -target_address_space [get_bd_addr_spaces qdma_0/M_AXI] [get_bd_addr_segs hbm_0/SAXI_{saxi:02d}/HBM_MEM{pc:02d}] -force\n'
-    indentation = '\t' * indent
+    indentation = '    ' * indent
     tcl = []
+    # divide one pc to multiple saxi
     for pc in pc_list:
         for saxi in saxi_list:
             if saxi == saxi_list[-1]:
                 range = hex_addr(last_segment_size)
             else:
                 range = hex_addr(segment_size)
-            offset = hex_addr(pc * segment_size)
+            offset = hex_addr(saxi * segment_size + pc * pc_size)
             tcl.append(indentation + command.format(saxi=saxi, pc=pc, offset=offset, range=range))
     return tcl
 

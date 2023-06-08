@@ -35,7 +35,7 @@ class TestCase:
             self.board_repo,
             os.path.abspath('.'),
             os.path.abspath(self.report_dir),
-            self.build_dir
+            self.name
         )
 
         insert_point = 1 + hbm_ip_utils.locate_insertion_point(lines, 'AXI Interconnect property settings')
@@ -54,8 +54,8 @@ class TestCase:
             self.saxi_enabled
         )
 
-        insert_point = 1 + hbm_ip_utils.locate_insertion_point(lines, 'Active low reset connections')
-        lines[insert_point:insert_point] = hbm_ip_utils.gen_tcl_connect_reset(
+        insert_point = 1 + hbm_ip_utils.locate_insertion_point(lines, 'clock and reset connections')
+        lines[insert_point:insert_point] = hbm_ip_utils.gen_tcl_connect_clkrst(
             self.saxi_enabled
         )
 
@@ -68,10 +68,15 @@ class TestCase:
             f.writelines(lines)
 
         # build design
+        root = os.getcwd()
         os.chdir(self.build_dir)
         err = os.system('vivado -mode batch -source make_design.tcl')
+        os.chdir(root)
         if err != 0:
             raise RuntimeError(f'Vivado process failed with code {err}.')
+
+    def report_exist(self):
+        return os.path.exists(f'{self.report_dir}/{self.name}_utilization.rpt')
 
     def collect_utilization_result(self):
         avail_on_device = vivado_utils.Utilization((0, 0), (0, 0), (0, 0), (0, 0), (0, 0))
@@ -85,22 +90,21 @@ class TestCase:
 
 
 TEST_CASES = [
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(1)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(2)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(3)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(4)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(5)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(6)]),
-    TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(7)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(1)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(2)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(3)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(4)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(5)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(6)]),
+    # TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(7)]),
     TestCase(mcs_enabled=[0], saxi_enabled=[i for i in range(8)]),
-    TestCase(mcs_enabled=[i for i in range(1)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(2)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(3)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(4)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(5)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(6)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(7)], saxi_enabled=[0]),
-    TestCase(mcs_enabled=[i for i in range(8)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(2)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(3)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(4)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(5)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(6)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(7)], saxi_enabled=[0]),
+    # TestCase(mcs_enabled=[i for i in range(8)], saxi_enabled=[0]),
 ]
 
 def main():
@@ -108,7 +112,8 @@ def main():
     summary_file = f'summary_{curr_datetime}.rpt'
     for test_case in TEST_CASES:
         try:
-            test_case.build_design()
+            if not test_case.report_exist():
+                test_case.build_design()
             utilization = test_case.collect_utilization_result()
             with open(summary_file, 'a', newline='') as f:
                 f.write(f'{test_case.name}\n')
@@ -116,8 +121,12 @@ def main():
                     f.write(f"    {k}: {v[0]} ({v[1] * 100:.2f}%)\n")
         except Exception as e:
             print(f"[ERROR] Test '{test_case.name}' failed with exception: {e}")
+            with open(summary_file, 'a', newline='') as f:
+                f.write(f'{test_case.name}\n')
+                f.write(f"    Failed with exception: {e}\n")
+                f.flush()
             traceback.print_exc()
-            sys.exit(1)
+            # sys.exit(1)
 
 if __name__ == '__main__':
     main()

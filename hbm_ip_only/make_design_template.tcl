@@ -4,7 +4,7 @@
 # Set the project name
 
 # Create project
-create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xcu280-fsvh2892-2L-e
+create_project ${_xil_proj_name_} ./${_xil_proj_name_} -part xcu280-fsvh2892-2L-e -force
 
 # Set the directory path for the new project
 set proj_dir [get_property directory [current_project]]
@@ -222,7 +222,6 @@ proc cr_bd_design_1 { parentCell } {
 
     # Create port connections
     connect_bd_net -net clk_100MHz_1 [get_bd_ports clk_100MHz] [get_bd_pins clk_wiz/clk_in1]
-    connect_bd_net -net clk_wiz_clk_out1 [get_bd_pins axi_apb_bridge_0/s_axi_aclk] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/M01_ACLK] [get_bd_pins axi_mem_intercon/M02_ACLK] [get_bd_pins clk_wiz/clk_out1] [get_bd_pins hbm_0/APB_0_PCLK] [get_bd_pins hbm_0/AXI_00_ACLK] [get_bd_pins hbm_0/AXI_01_ACLK] [get_bd_pins hbm_0/HBM_REF_CLK_0] [get_bd_pins rst_clk_wiz_100M/slowest_sync_clk]
     connect_bd_net -net clk_wiz_locked [get_bd_pins clk_wiz/locked] [get_bd_pins rst_clk_wiz_100M/dcm_locked]
     connect_bd_net -net hbm_0_apb_complete_0 [get_bd_ports apb_complete_0_0] [get_bd_pins hbm_0/apb_complete_0]
     connect_bd_net -net pcie_perstn_1 [get_bd_ports pcie_perstn] [get_bd_pins qdma_0/sys_rst_n]
@@ -232,7 +231,8 @@ proc cr_bd_design_1 { parentCell } {
     connect_bd_net -net rst_clk_wiz_100M_peripheral_aresetn [get_bd_pins axi_apb_bridge_0/s_axi_aresetn] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/M01_ARESETN] [get_bd_pins axi_mem_intercon/M02_ARESETN] [get_bd_pins rst_clk_wiz_100M/peripheral_aresetn]
     connect_bd_net -net util_ds_buf_IBUF_DS_ODIV2 [get_bd_pins qdma_0/sys_clk] [get_bd_pins util_ds_buf/IBUF_DS_ODIV2]
     connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins qdma_0/sys_clk_gt] [get_bd_pins util_ds_buf/IBUF_OUT]
-    #? Active low reset connections <
+    #? clock and reset connections <
+
 
 
     # Create address segments
@@ -296,3 +296,4 @@ wait_on_run impl_1
 # report utilization
 open_run impl_1
 report_utilization -file $report_dir/${_xil_proj_name_}_utilization.rpt
+report_utilization -hierarchical -file $report_dir/${_xil_proj_name_}_hierarchical_utilization.rpt
